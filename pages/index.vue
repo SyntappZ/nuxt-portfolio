@@ -10,15 +10,18 @@
       </div>
     </div>
   <About  />
+  <Skills />
   </div>
 </template>
 
 <script>
-import About from '~/components/About.vue';
-import jump from 'jump.js';
+import About from '~/components/About';
+import Skills from '~/components/Skills';
+
 export default {
   components: {
-    About
+    About,
+    Skills
   },
   
  

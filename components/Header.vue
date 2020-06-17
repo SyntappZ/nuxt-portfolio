@@ -1,9 +1,9 @@
 <template>
   <header>
-    <nav class="nav" :style="{background: this.navColor}">
+    <nav :class="{'visible-nav': isVisable}">
       <div class="nav-links">
         <p @click="jumpToSection('.about-section')">about</p>
-        <p>skills</p>
+        <p @click="jumpToSection('.skills-section')">skills</p>
         <p>projects</p>
         <p>contact</p>
       </div>
@@ -22,20 +22,22 @@ export default {
   },
   data() {
     return {
-      navColor: "transparent"
+      navColor: "transparent",
+      isVisable: false
     };
   },
   methods: {
     scroller() {
-      scrollY > 70
-        ? (this.navColor = "white")
-        : (this.navColor = "transparent");
+      scrollY > 70 ? (this.isVisable = true) : (this.isVisable = false);
+
+      console.log(this.isVisable);
     },
 
     jumpToSection(target) {
       jump(target);
     }
-  }
+  },
+  computed: {}
 };
 </script>
 
@@ -44,7 +46,15 @@ nav {
   text-align: center;
   position: fixed;
   width: 100%;
-  transition: ease 0.3s;
+  transition: ease 0.5s;
+  z-index: 10;
+  padding-top: 15px;
+}
+
+.visible-nav {
+  background: white;
+  padding: 0;
+  border-bottom: solid 1px var(--grey);
 }
 
 .nav-links {
