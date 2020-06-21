@@ -23,18 +23,22 @@ export default {
   data() {
     return {
       navColor: "transparent",
-      isVisable: false
+      isVisable: false,
+      prevTarget: null
     };
   },
   methods: {
     scroller() {
       scrollY > 70 ? (this.isVisable = true) : (this.isVisable = false);
-
-      console.log(this.isVisable);
+      if(scrollY < 10) this.prevTarget = null
     },
 
     jumpToSection(target) {
-      jump(target);
+      if(this.prevTarget !== target) {
+       jump(target);
+      }
+      
+      this.prevTarget = target
     }
   },
   computed: {}

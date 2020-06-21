@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import About from '~/components/About';
-import Skills from '~/components/Skills';
+import About from '~/components/sections/About';
+import Skills from '~/components/sections/Skills';
 
 export default {
   components: {
