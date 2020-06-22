@@ -67,7 +67,8 @@ export default {
   list-style: none;
 }
 .list li {
-padding: 2px 0;
+  padding: 2px 0;
+  text-transform: capitalize;
 }
 .list li::before {
   content: "\2022";
@@ -81,6 +82,7 @@ padding: 2px 0;
   color: var(--desc);
   font-weight: 400;
   font-size: 15px;
+  white-space: pre-line;
   
 }
 .desc-title {
@@ -88,5 +90,6 @@ padding: 2px 0;
   font-weight: bold;
   font-size: 15px;
   margin-top: 20px;
+  margin-bottom: 10px;
 }
 </style>

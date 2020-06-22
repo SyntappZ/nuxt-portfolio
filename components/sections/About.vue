@@ -20,7 +20,7 @@
             me start my journey as a real web developer.
           </p>
 
-          <Button title="read more" buttonWidth="150" @onClick="eat" />
+          <Button title="read more" buttonWidth="150" @onClick="scrollDown" />
         </div>
         <div class="about-box">
           <div class="about-border"></div>
@@ -34,13 +34,15 @@
 
 <script>
 import Button from "../Button.vue";
+import {mapActions} from 'vuex'
 export default {
   components: {
     Button
   },
   methods: {
-    eat() {
-      console.log("button works");
+    ...mapActions(["scrollTo"]),
+    scrollDown() {
+      this.scrollTo('.skills-section')
     }
   }
 };

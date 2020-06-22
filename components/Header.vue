@@ -13,6 +13,7 @@
 
 <script>
 import jump from "jump.js";
+import { mapActions } from "vuex";
 export default {
   mounted() {
     document.addEventListener("scroll", this.scroller);
@@ -23,22 +24,21 @@ export default {
   data() {
     return {
       navColor: "transparent",
-      isVisable: false,
-      prevTarget: null
+      isVisable: false
     };
   },
   methods: {
     scroller() {
       scrollY > 70 ? (this.isVisable = true) : (this.isVisable = false);
-      if(scrollY < 10) this.prevTarget = null
+      if (scrollY < 10) {
+        this.resetScroll()
+      }
     },
 
+    ...mapActions(["scrollTo", "resetScroll"]),
+
     jumpToSection(target) {
-      if(this.prevTarget !== target) {
-       jump(target);
-      }
-      
-      this.prevTarget = target
+      this.scrollTo(target);
     }
   },
   computed: {}
