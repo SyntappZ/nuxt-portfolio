@@ -20,7 +20,7 @@
             me start my journey as a real web developer.
           </p>
 
-          <Button title="read more" buttonWidth="150" @onClick="scrollDown" />
+          <Button title="read more" buttonWidth="150" @onClick="scrollTo('.skills-section')" />
         </div>
         <div class="about-box">
           <div class="about-border"></div>
@@ -41,9 +41,6 @@ export default {
   },
   methods: {
     ...mapActions(["scrollTo"]),
-    scrollDown() {
-      this.scrollTo('.skills-section')
-    }
   }
 };
 </script>

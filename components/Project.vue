@@ -1,5 +1,5 @@
 <template>
-  <div class="projects-section">
+  <div class="project">
 
   </div>
 </template>

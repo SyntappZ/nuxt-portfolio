@@ -1,6 +1,6 @@
-
+import {projectsData} from '../data/projectsData.js'
 const state = () => ({
-   
+    projects: projectsData
 })
 
  const mutations = {
