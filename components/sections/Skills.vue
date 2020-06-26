@@ -1,5 +1,5 @@
 <template>
-  <div class="skills-section">
+  <section class="skills-section">
     <div class="container">
       <div class="wrap">
         <h4>skills</h4>
@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -35,7 +35,7 @@ export default {
     return {};
   },
   mounted() {
-    console.log(this.timelineSkills);
+    // console.log(this.timelineSkills);
   },
   computed: {
     ...mapState("skills", ["timelineSkills"])

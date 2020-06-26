@@ -4,8 +4,8 @@
       <div class="nav-links">
         <p @click="jumpToSection('.about-section')">about</p>
         <p @click="jumpToSection('.skills-section')">skills</p>
-        <p>projects</p>
-        <p>contact</p>
+        <p @click="jumpToSection('.projects-section')">projects</p>
+        <p @click="jumpToSection('.contact-section')">contact</p>
       </div>
     </nav>
   </header>

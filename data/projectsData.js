@@ -34,11 +34,27 @@ class Project {
     this.icon = icon
     this.images = images.map(img => `~/assets${img}`);
     this.isWebsite = type
-    this.bold = bold
+   
   }
 }
 
 const projectsData = [
+  new Project(
+    "Spotify-Wizard",
+    ["react native"],
+    "https://play.google.com/store/apps/details?id=com.vortexplayer",
+    "https://github.com/SyntappZ/vortex-mp3-player",
+    `This is my first react native project and the biggest project i have made so far, 
+        making this app i learn a lot about optimization and avoiding memory leaks, there are a couple problems with this app
+        that i have found which i just cannot fix yet, one being that getting track metadata takes a long time, i read this is due to the react native
+        bridge so that is unavoidable at the moment. The library i used has a batch reciever but it is not working at this moment in time... read more on 
+        github.
+       
+        `,
+    "fab fa-react",
+    ["/vortex/vortex3.png", "/vortex/vortex2.png", "/vortex/vortex1.png"],
+
+  ),
  new Project(
     "Vortex Player",
     ["react native"],
@@ -53,7 +69,7 @@ const projectsData = [
         `,
     "fab fa-react",
     ["/vortex/vortex3.png", "/vortex/vortex2.png", "/vortex/vortex1.png"],
-    false
+
   ),
  new Project(
     "CDN Javascript",
@@ -65,7 +81,7 @@ const projectsData = [
         `,
     "fab fa-react",
     ["/cdn/cdn.png"],
-    true
+   
   ),
 
  new Project(
@@ -79,7 +95,7 @@ const projectsData = [
          for most of them.`,
     "fab fa-sass",
     ["/awesome/main.jpg"],
-    true
+
   ),
  new Project(
     "the vault",
@@ -92,8 +108,8 @@ const projectsData = [
          easier. for testing use ---->`,
     "fab fa-vuejs",
     ["/vault/main.jpg"],
-    true,
-    "email: test@test.com - password: Test1234"
+  
+   
   ),
  new Project(
     "image recipes",
@@ -105,7 +121,7 @@ const projectsData = [
         and i really like how it works i will defo be making more projects with react in the future.`,
     "fab fa-react",
     ["/imageRecipe/main.jpg"],
-    true
+
   ),
  new Project(
     "regex-js",
@@ -117,7 +133,7 @@ const projectsData = [
           or can replace words with replace.`,
     "fab fa-angular",
     ["/regexjs/list.jpg", "/regexjs/text.jpg", "/regexjs/tester.jpg"],
-    false
+ 
   ),
 new Project(
     "memester",
@@ -129,7 +145,7 @@ new Project(
          and you can also save images to your favorites.`,
     "fab fa-vuejs",
     ["/memester/home.jpg", "/memester/image.jpg", "/memester/tags.jpg"],
-    false
+ 
   ),
 
  new Project(
@@ -141,7 +157,7 @@ new Project(
          so they can play them, i used a web scraper with node.js to get the track details. i also learned about virtual lists making this app.`,
     "fab fa-vuejs",
     ["/fusion/front.jpg", "/fusion/filter.jpg", "/fusion/info.jpg"],
-    false
+   
   )
 ];
 
