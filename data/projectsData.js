@@ -25,41 +25,49 @@
 // };
 
 class Project {
-  constructor(id, title, tech, link, github, desc, icon, images, type) {
-    this.id = id
-    this.title = title
-    this.tech = tech
-    this.pageLink = link
-    this.github = github
-    this.description = desc
-    this.icon = icon
+  constructor(id, title, tech, link, github, desc, images, type) {
+    this.id = id;
+    this.title = title;
+    this.tech = tech;
+    this.pageLink = link;
+    this.github = github;
+    this.description = desc;
     this.images = images.map(img => `/project-images${img}`);
-    this.isWebsite = type
-   
+    this.isWebsite = type;
   }
 }
 
+const images = (n, path) =>
+  Array(n)
+    .fill(1)
+    .map((x, i) => `${path}${i + x}.png`);
+
+const wizImages = images(12, "/wizard/wizafy");
+const aweImages = images(4, "/awsome/awesome");
+const vaultImages = images(4, "/vault/vault");
 
 const projectsData = [
   new Project(
-    '1',
+    "1",
     "Wizafy",
-    ["react native"],
-    "https://play.google.com/store/apps/details?id=com.vortexplayer",
-    "https://github.com/SyntappZ/vortex-mp3-player",
-    `This is my first react native project and the biggest project i have made so far, 
-        making this app i learn a lot about optimization and avoiding memory leaks, there are a couple problems with this app
-        that i have found which i just cannot fix yet, one being that getting track metadata takes a long time, i read this is due to the react native
-        bridge so that is unavoidable at the moment. The library i used has a batch reciever but it is not working at this moment in time... read more on 
-        github.
-       
-        `,
-    "fab fa-react",
-    ["/vortex/vortex3.png", "/vortex/vortex2.png", "/vortex/vortex1.png"],
+    ["react", "spotify api"],
+    "https://wizafy.netlify.app",
+    "",
+    `Wizafy is a spotify playlist generator but comes with many more features and is now my biggest project and i plan to work
+     on this more in the future with continued updates to make it better, 
+    if i knew about next at the time i would of made this app with it so i could get better seo on it by having it server side, 
+    maybe i will refurbish it at a later time.
 
+    I learnt a lot about react making this site, hooks and functional components make it such pleasure to work with and now after
+    working with react in my last few projects i feel i understand react more than vue now, i didnt use redux for this app i
+    decided to use useReducer and useContext for my state management and seems to work fine for now.
+    `,
+
+    wizImages,
+    true
   ),
- new Project(
-  '2',
+  new Project(
+    "2",
     "Vortex Player",
     ["react native"],
     "https://play.google.com/store/apps/details?id=com.vortexplayer",
@@ -71,12 +79,12 @@ const projectsData = [
         github.
        
         `,
-    "fab fa-react",
-    ["/vortex/vortex3.png", "/vortex/vortex2.png", "/vortex/vortex1.png"],
 
+    ["/vortex/vortex3.png", "/vortex/vortex2.png", "/vortex/vortex1.png"],
+    false
   ),
- new Project(
-  '3',
+  new Project(
+    "3",
     "CDN Javascript",
     ["react", "javascript", "css"],
     "https://cdn-javascript.netlify.com/",
@@ -84,13 +92,13 @@ const projectsData = [
     `This is a javascript cdn database, it has a live search, random, sort and favorites functions, the favorites save to local storage.
       There is a quick copy button and also a button that goes to the repo of the cdn so you can get more information.
         `,
-    "fab fa-react",
+
     ["/cdn/cdn.png"],
-   
+    true
   ),
 
- new Project(
-  '4',
+  new Project(
+    "4",
     "awesome recipes",
     ["vanilla javascript", "sass", "edamam api"],
     "https://awesome-recipes.netlify.com",
@@ -99,12 +107,12 @@ const projectsData = [
         and just have the search function, i got some well needed design practice in making this app tho which is good as i still feel like
         my design skills are lacking. it was also fun using just vanilla javascript to make a project after using frameworks
          for most of them.`,
-    "fab fa-sass",
-    ["/awesome/main.jpg"],
 
+    aweImages,
+    true
   ),
- new Project(
-  '5',
+  new Project(
+    "5",
     "the vault",
     ["vue", "vuetify", "firebase"],
     "https://vue-password-manager.web.app/",
@@ -113,13 +121,12 @@ const projectsData = [
         delete, edit both, the password manager has a strength indicator and a generator so you
          can always have a stong password stored and add them to favorites and even filter between strengths or favorites to find your passwords 
          easier. for testing use ---->`,
-    "fab fa-vuejs",
-    ["/vault/main.jpg"],
-  
-   
+
+    vaultImages,
+    true
   ),
- new Project(
-  '6',
+  new Project(
+    "6",
     "image recipes",
     ["react", "firebase", "google vision", "edamam api"],
     "https://image-recipes.netlify.com",
@@ -127,12 +134,12 @@ const projectsData = [
     `I made image recipes just as a quick project to test out the google vision api i 
         plan to make an app using vision in the future. it was also my first time using react 
         and i really like how it works i will defo be making more projects with react in the future.`,
-    "fab fa-react",
-    ["/imageRecipe/main.jpg"],
 
+    ["/imageRecipe/main.jpg"],
+    true
   ),
- new Project(
-  '7',
+  new Project(
+    "7",
     "regex-js",
     ["ionic", "angular", "cordova"],
     "https://play.google.com/store/apps/details?id=io.syntappz.regex",
@@ -140,12 +147,12 @@ const projectsData = [
     `I made this app with ionic/angular and this app has full documents on javaScript regular expressions and most will apply to other languages too.
           It also has a regex tester which can test with match which will highlight the matched results, 
           or can replace words with replace.`,
-    "fab fa-angular",
+
     ["/regexjs/list.jpg", "/regexjs/text.jpg", "/regexjs/tester.jpg"],
- 
+    false
   ),
-new Project(
-  '8',
+  new Project(
+    "8",
     "memester",
     ["vue", "framework 7", "cordova", "imgur api"],
     "https://play.google.com/store/apps/details?id=syntappz.memester.fm7",
@@ -153,74 +160,73 @@ new Project(
     `I made Memester with framwork 7 and vue it is a meme search and share app for android with lazyLoad images with
          masonary layout and has related tags images too and pressing the tag will load more images of that tag name 
          and you can also save images to your favorites.`,
-    "fab fa-vuejs",
+
     ["/memester/home.jpg", "/memester/image.jpg", "/memester/tags.jpg"],
- 
+    false
   ),
 
- new Project(
-  '9',
+  new Project(
+    "9",
     "fusion ninja",
     ["vue", "framework 7", "cordova"],
     "https://play.google.com/store/apps/details?id=io.syntappz.fusion",
     "https://github.com/SyntappZ/trials-fusion-ninja-app",
     `I made this using vue, framework7 and cordova and this is for a game called trials fusion, it allows people to search for other peoples ninja tracks that they have made
          so they can play them, i used a web scraper with node.js to get the track details. i also learned about virtual lists making this app.`,
-    "fab fa-vuejs",
+
     ["/fusion/front.jpg", "/fusion/filter.jpg", "/fusion/info.jpg"],
-   
+    false
   )
 ];
 
-
 const projectsThumbnails = [
- {
-   id: '1',
-   title: "wizafy",
-   thumbnail: '/project-thumbnails/wizafy.png'
- },
- {
-  id: '2',
-  title: "vortex player",
-  thumbnail: '/project-thumbnails/vortex.png'
-},
-{
-  id: '3',
-  title: "CDN javascript",
-  thumbnail: '/project-thumbnails/cdn.png'
-},
-{
-  id: '4',
-  title: "memester",
-  thumbnail: '/project-thumbnails/meme.png'
-},
-{
-  id: '5',
-  title: "the vault",
-  thumbnail: '/project-thumbnails/password.png'
-},
-{
-  id: '6',
-  title: "awesome recipes",
-  thumbnail: '/project-thumbnails/awesome.png'
-},
+  {
+    id: "1",
+    title: "wizafy",
+    thumbnail: "/project-thumbnails/wizafy.png"
+  },
+  {
+    id: "2",
+    title: "vortex player",
+    thumbnail: "/project-thumbnails/vortex.png"
+  },
+  {
+    id: "3",
+    title: "CDN javascript",
+    thumbnail: "/project-thumbnails/cdn.png"
+  },
+  {
+    id: "4",
+    title: "memester",
+    thumbnail: "/project-thumbnails/meme.png"
+  },
+  {
+    id: "5",
+    title: "the vault",
+    thumbnail: "/project-thumbnails/password.png"
+  },
+  {
+    id: "6",
+    title: "awesome recipes",
+    thumbnail: "/project-thumbnails/awesome.png"
+  },
 
-{
-  id: '7',
-  title: "regex js",
-  thumbnail: '/project-thumbnails/regex.png'
-},
-{
-  id: '8',
-  title: "image recipes",
-  thumbnail: '/project-thumbnails/image-recipes.png'
-},
+  {
+    id: "7",
+    title: "regex js",
+    thumbnail: "/project-thumbnails/regex.png"
+  },
+  {
+    id: "8",
+    title: "image recipes",
+    thumbnail: "/project-thumbnails/image-recipes.png"
+  },
 
-{
-  id: '9',
-  title: "fusion ninja",
-  thumbnail: '/project-thumbnails/trials.png'
-},
-]
+  {
+    id: "9",
+    title: "fusion ninja",
+    thumbnail: "/project-thumbnails/trials.png"
+  }
+];
 
 export { projectsData, projectsThumbnails };

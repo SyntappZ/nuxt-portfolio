@@ -7,7 +7,7 @@
         <h1 class="size-50">My Projects</h1>
 
         <div class="projects">
-        <Project v-for="image in projectsThumbnails" :key="image.id" :thumbnail="image.thumbnail" />
+        <Project v-for="image in projectsThumbnails" :key="image.id" :thumbnail="image.thumbnail" :title="image.title" />
        
         </div>
       </div>

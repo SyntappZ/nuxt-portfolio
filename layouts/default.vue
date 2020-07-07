@@ -55,6 +55,12 @@ body {
   height: 20px;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
