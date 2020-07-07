@@ -25,22 +25,25 @@
 // };
 
 class Project {
-  constructor(title, tech, link, github, desc, icon, images, type, bold) {
+  constructor(id, title, tech, link, github, desc, icon, images, type) {
+    this.id = id
     this.title = title
     this.tech = tech
     this.pageLink = link
     this.github = github
     this.description = desc
     this.icon = icon
-    this.images = images.map(img => `~/assets${img}`);
+    this.images = images.map(img => `/project-images${img}`);
     this.isWebsite = type
    
   }
 }
 
+
 const projectsData = [
   new Project(
-    "Spotify-Wizard",
+    '1',
+    "Wizafy",
     ["react native"],
     "https://play.google.com/store/apps/details?id=com.vortexplayer",
     "https://github.com/SyntappZ/vortex-mp3-player",
@@ -56,6 +59,7 @@ const projectsData = [
 
   ),
  new Project(
+  '2',
     "Vortex Player",
     ["react native"],
     "https://play.google.com/store/apps/details?id=com.vortexplayer",
@@ -72,6 +76,7 @@ const projectsData = [
 
   ),
  new Project(
+  '3',
     "CDN Javascript",
     ["react", "javascript", "css"],
     "https://cdn-javascript.netlify.com/",
@@ -85,6 +90,7 @@ const projectsData = [
   ),
 
  new Project(
+  '4',
     "awesome recipes",
     ["vanilla javascript", "sass", "edamam api"],
     "https://awesome-recipes.netlify.com",
@@ -98,6 +104,7 @@ const projectsData = [
 
   ),
  new Project(
+  '5',
     "the vault",
     ["vue", "vuetify", "firebase"],
     "https://vue-password-manager.web.app/",
@@ -112,6 +119,7 @@ const projectsData = [
    
   ),
  new Project(
+  '6',
     "image recipes",
     ["react", "firebase", "google vision", "edamam api"],
     "https://image-recipes.netlify.com",
@@ -124,6 +132,7 @@ const projectsData = [
 
   ),
  new Project(
+  '7',
     "regex-js",
     ["ionic", "angular", "cordova"],
     "https://play.google.com/store/apps/details?id=io.syntappz.regex",
@@ -136,6 +145,7 @@ const projectsData = [
  
   ),
 new Project(
+  '8',
     "memester",
     ["vue", "framework 7", "cordova", "imgur api"],
     "https://play.google.com/store/apps/details?id=syntappz.memester.fm7",
@@ -149,6 +159,7 @@ new Project(
   ),
 
  new Project(
+  '9',
     "fusion ninja",
     ["vue", "framework 7", "cordova"],
     "https://play.google.com/store/apps/details?id=io.syntappz.fusion",
@@ -161,4 +172,55 @@ new Project(
   )
 ];
 
-export { projectsData };
+
+const projectsThumbnails = [
+ {
+   id: '1',
+   title: "wizafy",
+   thumbnail: '/project-thumbnails/wizafy.png'
+ },
+ {
+  id: '2',
+  title: "vortex player",
+  thumbnail: '/project-thumbnails/vortex.png'
+},
+{
+  id: '3',
+  title: "CDN javascript",
+  thumbnail: '/project-thumbnails/cdn.png'
+},
+{
+  id: '4',
+  title: "memester",
+  thumbnail: '/project-thumbnails/meme.png'
+},
+{
+  id: '5',
+  title: "the vault",
+  thumbnail: '/project-thumbnails/password.png'
+},
+{
+  id: '6',
+  title: "awesome recipes",
+  thumbnail: '/project-thumbnails/awesome.png'
+},
+
+{
+  id: '7',
+  title: "regex js",
+  thumbnail: '/project-thumbnails/regex.png'
+},
+{
+  id: '8',
+  title: "image recipes",
+  thumbnail: '/project-thumbnails/image-recipes.png'
+},
+
+{
+  id: '9',
+  title: "fusion ninja",
+  thumbnail: '/project-thumbnails/trials.png'
+},
+]
+
+export { projectsData, projectsThumbnails };

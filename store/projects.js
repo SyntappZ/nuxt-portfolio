@@ -1,14 +1,11 @@
-import {projectsData} from '../data/projectsData.js'
+import { projectsData, projectsThumbnails } from "../data/projectsData.js";
 const state = () => ({
-    projects: projectsData
-})
+  projects: projectsData,
+  projectsThumbnails: projectsThumbnails
+});
 
- const mutations = {
-  
-}
+const mutations = {};
 
-const actions = {
-  
-}
+const actions = {};
 
-export {state, mutations, actions}
+export { state, mutations, actions };

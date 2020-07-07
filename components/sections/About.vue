@@ -24,7 +24,7 @@
         </div>
         <div class="about-box">
           <div class="about-border"></div>
-          <img src="~/assets/hand.jpg" alt="desk image" />
+          <img src="/images/desk.jpg" alt="desk image" />
           <h2 class="signature">syntappz</h2>
         </div>
       </div>

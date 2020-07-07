@@ -5,7 +5,6 @@ const skillsData = [
       subtitle: "node & express",
       skills: [
         "react native",
-        "kotlin",
         "nuxt",
         "ssr",
         "node",
@@ -36,7 +35,7 @@ const skillsData = [
         "ajax",
         "api's",
         "firebase",
-        "scss"
+        "sass"
       ],
       descTitle: "Programming & Frameworks",
       description: `After building projects with just js/jquery for a while i noticed some guy on youtube talking about a framework called vue,
