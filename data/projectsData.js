@@ -1,29 +1,3 @@
-// const createProject = (
-//   title,
-//   tech,
-//   link,
-//   github,
-//   desc,
-//   icon,
-//   images,
-//   type,
-//   bold
-// ) => {
-//   images = images.map(img => `~/assets/${img}`);
-
-//   return {
-//     title: title,
-//     tech: tech,
-//     pageLink: link,
-//     github: github,
-//     description: desc,
-//     icon: icon,
-//     images: images,
-//     isWebsite: type,
-//     bold: bold
-//   };
-// };
-
 class Project {
   constructor(id, title, tech, link, github, desc, images, type) {
     this.id = id;
@@ -46,11 +20,21 @@ const wizImages = images(12, "/wizard/wizafy");
 const aweImages = images(4, "/awsome/awesome");
 const vaultImages = images(4, "/vault/vault");
 
+const tech1 = ["react", "spotify api"];
+const tech2 = ["react native"];
+const tech3 = ["react"];
+const tech4 = ["vue", "framework 7", "cordova"];
+const tech5 = ["vue", "vuetify", "firebase"];
+const tech6 = ["javascript", "sass"];
+const tech7 = ["ionic", "angular", "cordova"];
+const tech8 = ["react", "firebase", "google vision"];
+const tech9 = ["vue", "framework 7", "cordova"];
+
 const projectsData = [
   new Project(
     "1",
     "Wizafy",
-    ["react", "spotify api"],
+    tech1,
     "https://wizafy.netlify.app",
     "",
     `Wizafy is a spotify playlist generator but comes with many more features and is now my biggest project and i plan to work
@@ -69,7 +53,7 @@ const projectsData = [
   new Project(
     "2",
     "Vortex Player",
-    ["react native"],
+    tech2,
     "https://play.google.com/store/apps/details?id=com.vortexplayer",
     "https://github.com/SyntappZ/vortex-mp3-player",
     `This is my first react native project and the biggest project i have made so far, 
@@ -86,7 +70,7 @@ const projectsData = [
   new Project(
     "3",
     "CDN Javascript",
-    ["react", "javascript", "css"],
+    tech3,
     "https://cdn-javascript.netlify.com/",
     "https://github.com/SyntappZ/cdn-javascript",
     `This is a javascript cdn database, it has a live search, random, sort and favorites functions, the favorites save to local storage.
@@ -96,25 +80,24 @@ const projectsData = [
     ["/cdn/cdn.png"],
     true
   ),
-
   new Project(
     "4",
-    "awesome recipes",
-    ["vanilla javascript", "sass", "edamam api"],
-    "https://awesome-recipes.netlify.com",
-    "https://github.com/SyntappZ/Awesome-Recipes",
-    `Making this project turned out to be a failure due to api restrictions so i had to remove all functionality that i had planned
-        and just have the search function, i got some well needed design practice in making this app tho which is good as i still feel like
-        my design skills are lacking. it was also fun using just vanilla javascript to make a project after using frameworks
-         for most of them.`,
+    "memester",
+    tech4,
+    "https://play.google.com/store/apps/details?id=syntappz.memester.fm7",
+    "https://github.com/SyntappZ/memester",
+    `I made Memester with framwork 7 and vue it is a meme search and share app for android with lazyLoad images with
+         masonary layout and has related tags images too and pressing the tag will load more images of that tag name 
+         and you can also save images to your favorites.`,
 
-    aweImages,
-    true
+    ["/memester/home.jpg", "/memester/image.jpg", "/memester/tags.jpg"],
+    false
   ),
+
   new Project(
     "5",
     "the vault",
-    ["vue", "vuetify", "firebase"],
+    tech5,
     "https://vue-password-manager.web.app/",
     "https://github.com/SyntappZ/the-vault",
     `The vault is a password manager made with vue and vuetify, it can store passwords or notes and you can add, 
@@ -127,21 +110,23 @@ const projectsData = [
   ),
   new Project(
     "6",
-    "image recipes",
-    ["react", "firebase", "google vision", "edamam api"],
-    "https://image-recipes.netlify.com",
-    "https://github.com/SyntappZ/image-recipe-search",
-    `I made image recipes just as a quick project to test out the google vision api i 
-        plan to make an app using vision in the future. it was also my first time using react 
-        and i really like how it works i will defo be making more projects with react in the future.`,
+    "awesome recipes",
+    tech6,
+    "https://awesome-recipes.netlify.com",
+    "https://github.com/SyntappZ/Awesome-Recipes",
+    `Making this project turned out to be a failure due to api restrictions so i had to remove all functionality that i had planned
+        and just have the search function, i got some well needed design practice in making this app tho which is good as i still feel like
+        my design skills are lacking. it was also fun using just vanilla javascript to make a project after using frameworks
+         for most of them.`,
 
-    ["/imageRecipe/main.jpg"],
+    aweImages,
     true
   ),
+
   new Project(
     "7",
     "regex-js",
-    ["ionic", "angular", "cordova"],
+    tech7,
     "https://play.google.com/store/apps/details?id=io.syntappz.regex",
     "https://github.com/SyntappZ/regex-cheatsheet",
     `I made this app with ionic/angular and this app has full documents on javaScript regular expressions and most will apply to other languages too.
@@ -153,22 +138,22 @@ const projectsData = [
   ),
   new Project(
     "8",
-    "memester",
-    ["vue", "framework 7", "cordova", "imgur api"],
-    "https://play.google.com/store/apps/details?id=syntappz.memester.fm7",
-    "https://github.com/SyntappZ/memester",
-    `I made Memester with framwork 7 and vue it is a meme search and share app for android with lazyLoad images with
-         masonary layout and has related tags images too and pressing the tag will load more images of that tag name 
-         and you can also save images to your favorites.`,
+    "image recipes",
+    tech8,
+    "https://image-recipes.netlify.com",
+    "https://github.com/SyntappZ/image-recipe-search",
+    `I made image recipes just as a quick project to test out the google vision api i 
+        plan to make an app using vision in the future. it was also my first time using react 
+        and i really like how it works i will defo be making more projects with react in the future.`,
 
-    ["/memester/home.jpg", "/memester/image.jpg", "/memester/tags.jpg"],
-    false
+    ["/imageRecipe/main.jpg"],
+    true
   ),
 
   new Project(
     "9",
     "fusion ninja",
-    ["vue", "framework 7", "cordova"],
+    tech9,
     "https://play.google.com/store/apps/details?id=io.syntappz.fusion",
     "https://github.com/SyntappZ/trials-fusion-ninja-app",
     `I made this using vue, framework7 and cordova and this is for a game called trials fusion, it allows people to search for other peoples ninja tracks that they have made
@@ -182,50 +167,59 @@ const projectsData = [
 const projectsThumbnails = [
   {
     id: "1",
-    title: "wizafy",
-    thumbnail: "/project-thumbnails/wizafy.png"
+    title: "Wizafy",
+    thumbnail: "/project-thumbnails/wizafy.png",
+    tech: tech1
   },
   {
     id: "2",
-    title: "vortex player",
-    thumbnail: "/project-thumbnails/vortex.png"
+    title: "Vortex player",
+    thumbnail: "/project-thumbnails/vortex.png",
+    tech: tech2
   },
   {
     id: "3",
-    title: "CDN javascript",
-    thumbnail: "/project-thumbnails/cdn.png"
+    title: "Cdn javascript",
+    thumbnail: "/project-thumbnails/cdn.png",
+    tech: tech3
   },
   {
     id: "4",
-    title: "memester",
-    thumbnail: "/project-thumbnails/meme.png"
+    title: "Memester",
+    thumbnail: "/project-thumbnails/meme.png",
+    tech: tech4
   },
   {
     id: "5",
-    title: "the vault",
-    thumbnail: "/project-thumbnails/password.png"
+    title: "The vault",
+    thumbnail: "/project-thumbnails/password.png",
+    tech: tech5
   },
   {
     id: "6",
-    title: "awesome recipes",
-    thumbnail: "/project-thumbnails/awesome.png"
+    title: "Awesome recipes",
+    thumbnail: "/project-thumbnails/awesome.png",
+    tech: tech6
   },
 
   {
     id: "7",
-    title: "regex js",
-    thumbnail: "/project-thumbnails/regex.png"
+    title: "Regex js",
+    thumbnail: "/project-thumbnails/regex.png",
+    tech: tech7
   },
   {
     id: "8",
-    title: "image recipes",
-    thumbnail: "/project-thumbnails/image-recipes.png"
+    title: "Image recipes",
+    thumbnail: "/project-thumbnails/image-recipes.png",
+    tech: tech8
   },
 
   {
     id: "9",
-    title: "fusion ninja",
-    thumbnail: "/project-thumbnails/trials.png"
+    title: "Fusion ninja",
+    thumbnail: "/project-thumbnails/trials.png",
+    tech: tech9
   }
 ];
 

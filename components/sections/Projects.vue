@@ -7,8 +7,13 @@
         <h1 class="size-50">My Projects</h1>
 
         <div class="projects">
-        <Project v-for="image in projectsThumbnails" :key="image.id" :thumbnail="image.thumbnail" :title="image.title" />
-       
+          <Project
+            v-for="image in projectsThumbnails"
+            :key="image.id"
+            :thumbnail="image.thumbnail"
+            :title="image.title"
+            :techArray="image.tech"
+          />
         </div>
       </div>
     </div>
@@ -16,16 +21,14 @@
 </template>
 
 <script>
-import Project from '../Project.vue'
+import Project from "../Project.vue";
 import { mapState } from "vuex";
 export default {
-  mounted() {
-    
-  },
+  mounted() {},
   components: {
     Project
   },
-   computed: {
+  computed: {
     ...mapState("projects", ["projects", "projectsThumbnails"])
   }
 };

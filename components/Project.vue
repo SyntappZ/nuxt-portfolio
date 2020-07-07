@@ -1,10 +1,14 @@
 <template>
   <div class="project">
     <img class="background-image" :src="thumbnail" alt="jeff" />
-    <div class="cover flex-center">
-      <div class="center">
-        <h2 class="title">{{title}}</h2>
-        <p class="tech">tech jeff</p>
+    <div class="cover">
+      <div class="top">
+        <h3 class="title">{{title}}</h3>
+      </div>
+      <div class="bottom">
+        <div class="tech-wrap">
+          <p class="tech" v-for="(tech, index) in techArray" :key="index">{{tech}}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -12,10 +16,10 @@
 
 <script>
 export default {
-  props: ["thumbnail", "title"],
+  props: ["thumbnail", "title", "techArray"],
 
   mounted() {
-    console.log(this.thumbnail);
+    // console.log(this.techArray);
   }
 };
 </script>
@@ -34,8 +38,13 @@ export default {
   top: 0;
   opacity: 1;
 }
-.project:hover .center {
-   opacity: 1;
+.project:hover .top {
+  opacity: 1;
+  top: 0;
+}
+.project:hover .bottom {
+  opacity: 1;
+  top: 0;
 }
 
 .background-image {
@@ -54,13 +63,31 @@ export default {
   opacity: 0;
 }
 
-.center {
+.top,
+.bottom {
+  height: 50%;
+  width: 100%;
   color: white;
-  text-align: center;
-  text-transform: capitalize;
-  transition: .3s;
+  position: relative;
   opacity: 0;
+  transition: .3s;
   transition-delay: .3s;
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  top: -100px;
+}
+
+.bottom {
+  top: 100px;
+}
+
+.tech-wrap {
+  display: flex;
+  justify-content: center;
 }
 
 .title {
@@ -70,5 +97,6 @@ export default {
   font-weight: bold;
   font-size: 12px;
   letter-spacing: 1px;
+  margin: 0 5px;
 }
 </style>
