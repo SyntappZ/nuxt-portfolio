@@ -2,9 +2,7 @@
   <div class="projects-section">
     <div class="container">
       <div class="wrap">
-        <h4>Projects</h4>
-        <br />
-        <h1 class="size-50">My Projects</h1>
+        <SectionTitle title="my projects" label="projects" />
 
         <div class="projects">
           <Project
@@ -23,11 +21,14 @@
 
 <script>
 import Project from "../Project.vue";
+import SectionTitle from "~/components/SectionTitle.vue";
+
 import { mapState } from "vuex";
 export default {
   mounted() {},
   components: {
-    Project
+    Project,
+    SectionTitle
   },
   computed: {
     ...mapState("projects", ["projectsThumbnails"])

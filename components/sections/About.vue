@@ -3,11 +3,9 @@
     <div class="container">
       <div class="wrap">
         <div class="about-box">
-          <h4>about</h4>
-          <br />
-
-          <h1 class="size-50">about me</h1>
+          <SectionTitle title="about me" label="about" />
           <div class="h-50"></div>
+
           <p class="desc">
             Hi im Martyn, i am a web & app developer and i got into coding in 2018,
             since then i have been using frameworks such as Vue & React to build websites/apps and i really love both of them,
@@ -34,13 +32,16 @@
 
 <script>
 import Button from "../Button.vue";
-import {mapActions} from 'vuex'
+import SectionTitle from "~/components/SectionTitle.vue";
+
+import { mapActions } from "vuex";
 export default {
   components: {
-    Button
+    Button,
+    SectionTitle
   },
   methods: {
-    ...mapActions(["scrollTo"]),
+    ...mapActions(["scrollTo"])
   }
 };
 </script>

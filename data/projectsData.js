@@ -20,7 +20,11 @@ const wizImages = images(12, "/wizard/wizafy");
 const aweImages = images(4, "/awesome/awesome");
 const vaultImages = images(4, "/vault/vault");
 const cdnImages = images(3, "/cdn/cdn");
-const recipeImages = images(3, '/imageRecipe/recipe')
+const recipeImages = images(3, "/imageRecipe/recipe");
+const regexImages = images(5, "/regexjs/regex");
+const memesterImages = images(6, "/memester/meme");
+const fusionImages = images(5, "/fusion/fusion");
+const vortexImages = images(5, "/vortex/vortex");
 
 const tech1 = ["react", "spotify api"];
 const tech2 = ["react native"];
@@ -39,14 +43,13 @@ const projectsData = [
     tech1,
     "https://wizafy.netlify.app",
     "https://github.com",
-    `Wizafy is a spotify playlist generator but comes with many more features and is now my biggest project and i plan to work
-     on this more in the future with continued updates to make it better, 
-    if i knew about next at the time i would of made this app with it so i could get better seo on it by having it server side, 
-    maybe i will refurbish it at a later time.
+    `Wizafy is a spotify playlist generator but comes with many more features and is now my biggest project and i plan to work on this more in the
+    future with continued updates to make it better, if i knew about next at the time i would of made this app with it so i could get better seo on it by 
+    having it server side, maybe i will refurbish it at a later time.
 
-    I learnt a lot about react making this site, hooks and functional components make it such pleasure to work with and now after
-    working with react in my last few projects i feel i understand react more than vue now, i didnt use redux for this app i
-    decided to use useReducer and useContext for my state management and seems to work fine for now.
+    I learnt a lot about react making this site, hooks and functional components make it such pleasure to work with and now after working with react
+    in my last few projects i feel i understand react more than vue now, i didnt use redux for this app i decided to use useReducer and useContext
+    for my state management and seems to work fine for now.
     `,
 
     wizImages,
@@ -58,15 +61,14 @@ const projectsData = [
     tech2,
     "https://play.google.com/store/apps/details?id=com.vortexplayer",
     "https://github.com/SyntappZ/vortex-mp3-player",
-    `This is my first react native project and the biggest project i have made so far, 
-        making this app i learn a lot about optimization and avoiding memory leaks, there are a couple problems with this app
-        that i have found which i just cannot fix yet, one being that getting track metadata takes a long time, i read this is due to the react native
-        bridge so that is unavoidable at the moment. The library i used has a batch reciever but it is not working at this moment in time... read more on 
-        github.
+    `This is my first react native project and the biggest project i have made so far, making this app i learn a lot about optimization and avoiding memory leaks,
+     there are a couple problems with this app that i have found which i just cannot fix yet, one being that getting track metadata takes a long time, i read this
+     is due to the react native bridge so that is unavoidable at the moment. The library i used has a batch reciever but it is not working at this moment in time...
+     read more on github.
        
         `,
 
-    ["/vortex/vortex3.png", "/vortex/vortex2.png", "/vortex/vortex1.png"],
+    vortexImages,
     false
   ),
   new Project(
@@ -75,8 +77,8 @@ const projectsData = [
     tech3,
     "https://cdn-javascript.netlify.com/",
     "https://github.com/SyntappZ/cdn-javascript",
-    `This is a javascript cdn database, it has a live search, random, sort and favorites functions, the favorites save to local storage.
-      There is a quick copy button and also a button that goes to the repo of the cdn so you can get more information.
+    `This is a javascript cdn database, it has a live search, random, sort and favorites functions, the favorites save to local storage. There is a quick
+     copy button and also a button that goes to the repo of the cdn so you can get more information.
         `,
 
     cdnImages,
@@ -88,11 +90,10 @@ const projectsData = [
     tech4,
     "https://play.google.com/store/apps/details?id=syntappz.memester.fm7",
     "https://github.com/SyntappZ/memester",
-    `I made Memester with framwork 7 and vue it is a meme search and share app for android with lazyLoad images with
-         masonary layout and has related tags images too and pressing the tag will load more images of that tag name 
-         and you can also save images to your favorites.`,
+    `I made Memester with framwork 7 and vue it is a meme search and share app for android with lazyLoad images with masonary layout 
+    and has related tags images too and pressing the tag will load more images of that tag name and you can also save images to your favorites.`,
 
-    ["/memester/home.jpg", "/memester/image.jpg", "/memester/tags.jpg"],
+    memesterImages,
     false
   ),
 
@@ -102,10 +103,9 @@ const projectsData = [
     tech5,
     "https://vue-password-manager.web.app/",
     "https://github.com/SyntappZ/the-vault",
-    `The vault is a password manager made with vue and vuetify, it can store passwords or notes and you can add, 
-        delete, edit both, the password manager has a strength indicator and a generator so you
-         can always have a stong password stored and add them to favorites and even filter between strengths or favorites to find your passwords 
-         easier. for testing use ---->`,
+    `The vault is a password manager made with vue and vuetify, it can store passwords or notes and you can add,  delete, edit both,
+     the password manager has a strength indicator and a generator so you can always have a stong password stored and add them to favorites
+      and even filter between strengths or favorites to find your passwords easier. for testing use this email and password - test@test.com - Test1234`,
 
     vaultImages,
     true
@@ -116,10 +116,9 @@ const projectsData = [
     tech6,
     "https://awesome-recipes.netlify.com",
     "https://github.com/SyntappZ/Awesome-Recipes",
-    `Making this project turned out to be a failure due to api restrictions so i had to remove all functionality that i had planned
-        and just have the search function, i got some well needed design practice in making this app tho which is good as i still feel like
-        my design skills are lacking. it was also fun using just vanilla javascript to make a project after using frameworks
-         for most of them.`,
+    `Making this project turned out to be a failure due to api restrictions so i had to remove all functionality that i had planned and just have
+     the search function, i got some well needed design practice in making this app tho which is good as i still feel like my design skills are lacking.
+    it was also fun using just vanilla javascript to make a project after using frameworks for most of them.`,
 
     aweImages,
     true
@@ -132,10 +131,9 @@ const projectsData = [
     "https://play.google.com/store/apps/details?id=io.syntappz.regex",
     "https://github.com/SyntappZ/regex-cheatsheet",
     `I made this app with ionic/angular and this app has full documents on javaScript regular expressions and most will apply to other languages too.
-          It also has a regex tester which can test with match which will highlight the matched results, 
-          or can replace words with replace.`,
+     It also has a regex tester which can test with match which will highlight the matched results, or can replace words with replace.`,
 
-    ["/regexjs/list.jpg", "/regexjs/text.jpg", "/regexjs/tester.jpg"],
+    regexImages,
     false
   ),
   new Project(
@@ -144,11 +142,10 @@ const projectsData = [
     tech8,
     "https://image-recipes.netlify.com",
     "https://github.com/SyntappZ/image-recipe-search",
-    `I made image recipes just as a quick project to test out the google vision api i 
-        plan to make an app using vision in the future. it was also my first time using react 
-        and i really like how it works i will defo be making more projects with react in the future.`,
+    `I made image recipes just as a quick project to test out the google vision api i plan to make an app using vision in the future. it was also my 
+    first time using react and i really like how it works i will defo be making more projects with react in the future.`,
 
-        recipeImages,
+    recipeImages,
     true
   ),
 
@@ -161,7 +158,7 @@ const projectsData = [
     `I made this using vue, framework7 and cordova and this is for a game called trials fusion, it allows people to search for other peoples ninja tracks that they have made
          so they can play them, i used a web scraper with node.js to get the track details. i also learned about virtual lists making this app.`,
 
-    ["/fusion/front.jpg", "/fusion/filter.jpg", "/fusion/info.jpg"],
+    fusionImages,
     false
   )
 ];

@@ -6,7 +6,13 @@
          <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </div>
         <p>{{projectTitle}}</p>
+        <div class="project-links">
+          <a :href="github" target="_">Github</a>
+          <a :href="pageLink" target="_">Visit {{isWebsite ? 'site' : 'app'}}</a>
+        </div>
       </div>
+
+
       <div class="nav-links" v-else>
         <p @click="jumpToSection('.about-section')">about</p>
         <p @click="jumpToSection('.skills-section')">skills</p>
@@ -21,7 +27,7 @@
 import jump from "jump.js";
 import { mapActions } from "vuex";
 export default {
-  props: ["projectTitle"],
+  props: ["projectTitle", 'pageLink', 'github', 'isWebsite'],
   mounted() {
     document.addEventListener("scroll", this.scroller);
   },
@@ -72,6 +78,25 @@ nav {
   border-bottom: solid 1px var(--grey);
 }
 
+.project-links {
+  height: 100%;
+
+  position: absolute;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.project-links a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--blue);
+  margin: 0 30px;
+  text-transform: capitalize;
+  padding: 10px;
+  font-size: 15px;
+  cursor: pointer;
+}
 .nav-links {
   display: flex;
   justify-content: center;

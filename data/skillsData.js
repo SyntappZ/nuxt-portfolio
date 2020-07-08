@@ -18,7 +18,7 @@ const skillsData = [
       kotlin but im getting there.
       
       As of 22 june i have built one server with express and node and database with mongoDB just to get firmilular with them, i also started
-      to jump back into vue and learn nuxt so i can have my next app with a backend and also SSR.
+      to jump back into vue and learn nuxt so i can have my next app with a backend and also SSR, also this portfolio will be build with nuxt.
       
       To be continued...`
     },

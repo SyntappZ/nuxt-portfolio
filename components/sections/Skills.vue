@@ -2,9 +2,7 @@
   <section class="skills-section">
     <div class="container">
       <div class="wrap">
-        <h4>skills</h4>
-        <br />
-        <h1 class="size-50">timeline</h1>
+        <SectionTitle title="timeline" label="skills" />
 
         <div class="timeline">
           <div class="bar"></div>
@@ -27,16 +25,17 @@
 <script>
 import Year from "../Year.vue";
 import { mapState } from "vuex";
+import SectionTitle from "~/components/SectionTitle.vue";
+
 export default {
   components: {
-    Year
+    Year,
+    SectionTitle
   },
   data() {
     return {};
   },
-  mounted() {
-    // console.log(this.timelineSkills);
-  },
+ 
   computed: {
     ...mapState("skills", ["timelineSkills"])
   }

@@ -5,18 +5,13 @@
 <script>
 export default {
   props: ["title", "handleClick", "buttonWidth"],
-  mounted() {
-    
-  },
-   created() {
-    
-  },
+  mounted() {},
+  created() {},
   methods: {
-      onClick() {
-          this.$emit('onClick');
-      }
+    onClick() {
+      this.$emit("onClick");
+    }
   }
-
 };
 </script>
 
@@ -32,10 +27,12 @@ export default {
   border-radius: 50px;
   background: var(--linearMix);
   cursor: pointer;
-  transition: .5s;
+  transition: 0.5s;
   margin: 50px 0;
 }
+
+
 .btn:hover {
-   transform: scale(.9);
+  transform: scale(0.9);
 }
 </style>

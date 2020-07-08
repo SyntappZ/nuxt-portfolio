@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-     <Header />
+    <Header />
     <div class="background">
       <div class="container">
         <div class="welcome">
@@ -10,19 +10,20 @@
         </div>
       </div>
     </div>
-  <About  />
-  <Skills />
-  <Projects />
-  <Contact />
+    <About />
+    <Skills />
+    <Projects />
+    <Contact />
   </div>
 </template>
 
 <script>
 import Header from "~/components/Header.vue";
-import About from '~/components/sections/About';
-import Skills from '~/components/sections/Skills';
-import Projects from '~/components/sections/Projects'
-import Contact from '~/components/sections/Contact'
+import About from "~/components/sections/About";
+import Skills from "~/components/sections/Skills";
+import Projects from "~/components/sections/Projects";
+import Contact from "~/components/sections/Contact";
+
 export default {
   components: {
     About,
@@ -30,9 +31,7 @@ export default {
     Projects,
     Contact,
     Header
-  },
-  
- 
+  }
 };
 </script>
 
@@ -46,8 +45,6 @@ export default {
   display: flex;
   align-items: center;
 }
-
-
 
 .welcome {
   width: 100%;
