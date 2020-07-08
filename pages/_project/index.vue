@@ -3,11 +3,12 @@
     <Header :projectTitle="project.title" />
     <div class="container">
       <div class="wrap">
-        <h4>Project details</h4>
-        <h5 class="desc-title">{{ project.title }}</h5>
+        <h4 class="title">{{ project.title }}</h4>
+        
         <div class="carousel-section">
-         <!-- <Carousel /> -->
+         <Carousel :images="project.images" />
         </div>
+        <h5 class="desc-title">Project details</h5>
       </div>
     </div>
   </div>
@@ -22,7 +23,7 @@ import Carousel from "~/components/Carousel.vue";
 export default {
   components: {
     Header,
-    // Carousel
+    Carousel
   
   },
   data() {
@@ -49,12 +50,15 @@ export default {
 .wrap {
   padding: 200px 0 0 0;
 }
+.title {
+  margin-bottom: 30px;
+}
 .desc-title {
   color: rgb(71, 71, 71);
   font-weight: bold;
   font-size: 15px;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 .carousel-section {
 }
@@ -64,5 +68,6 @@ export default {
   font-weight: 400;
   font-size: 15px;
   white-space: pre-line;
+
 }
 </style>

@@ -17,8 +17,10 @@ const images = (n, path) =>
     .map((x, i) => `${path}${i + x}.png`);
 
 const wizImages = images(12, "/wizard/wizafy");
-const aweImages = images(4, "/awsome/awesome");
+const aweImages = images(4, "/awesome/awesome");
 const vaultImages = images(4, "/vault/vault");
+const cdnImages = images(3, "/cdn/cdn");
+const recipeImages = images(3, '/imageRecipe/recipe')
 
 const tech1 = ["react", "spotify api"];
 const tech2 = ["react native"];
@@ -77,7 +79,7 @@ const projectsData = [
       There is a quick copy button and also a button that goes to the repo of the cdn so you can get more information.
         `,
 
-    ["/cdn/cdn.png"],
+    cdnImages,
     true
   ),
   new Project(
@@ -146,7 +148,7 @@ const projectsData = [
         plan to make an app using vision in the future. it was also my first time using react 
         and i really like how it works i will defo be making more projects with react in the future.`,
 
-    ["/imageRecipe/main.jpg"],
+        recipeImages,
     true
   ),
 
