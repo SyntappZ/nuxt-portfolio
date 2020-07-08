@@ -1,7 +1,13 @@
 <template>
   <header>
-    <nav :class="{'visible-nav': isVisable}">
-      <div class="nav-links">
+    <nav :class="{'visible-nav': isVisable || projectTitle }">
+      <div class="nav-links" v-if="projectTitle">
+        <div class="back-button" @click="goBack">
+         <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </div>
+        <p>{{projectTitle}}</p>
+      </div>
+      <div class="nav-links" v-else>
         <p @click="jumpToSection('.about-section')">about</p>
         <p @click="jumpToSection('.skills-section')">skills</p>
         <p @click="jumpToSection('.projects-section')">projects</p>
@@ -15,6 +21,7 @@
 import jump from "jump.js";
 import { mapActions } from "vuex";
 export default {
+  props: ["projectTitle"],
   mounted() {
     document.addEventListener("scroll", this.scroller);
   },
@@ -33,6 +40,10 @@ export default {
       if (scrollY < 10) {
         this.resetScroll()
       }
+    },
+
+    goBack() {
+      this.$router.back()
     },
 
     ...mapActions(["scrollTo", "resetScroll"]),
@@ -76,5 +87,17 @@ nav {
   text-decoration: none;
   padding: 25px;
   cursor: pointer;
+}
+.back-button {
+  position: absolute;
+  left: 50px;
+  cursor: pointer;
+  color: var(--blue);
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }
 </style>

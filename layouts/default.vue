@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <nuxt />
   </div>
 </template>
@@ -8,12 +7,7 @@
 
 
 <script>
-import Header from "~/components/Header.vue";
-export default {
-  components: {
-    Header
-  }
-};
+export default {};
 </script>
 
 
@@ -30,14 +24,14 @@ body {
 }
 
 :root {
---blue: #425bb5;
---linearMix: linear-gradient(45deg, var(--blue), #fa98a9);
---grey: #f3f3f3;
---desc: #5a5a5a;
+  --blue: #425bb5;
+  --linearMix: linear-gradient(45deg, var(--blue), #fa98a9);
+  --grey: #f3f3f3;
+  --desc: #5a5a5a;
 }
 
 .container {
-  width:100%;
+  width: 100%;
   max-width: 1160px;
   margin: 0 auto;
   padding: 0 30px;
@@ -71,9 +65,8 @@ h1 {
   font-size: 70px;
   line-height: 70px;
   font-weight: 200;
-  text-transform:  capitalize;
+  text-transform: capitalize;
 }
-
 
 h4 {
   font-family: "Lato", sans-serif;
@@ -109,5 +102,4 @@ h4:before {
   color: var(--desc);
   font-weight: 300;
 }
-
 </style>

@@ -1,22 +1,24 @@
 <template>
-  <div class="project">
-    <img class="background-image" :src="thumbnail" alt="jeff" />
-    <div class="cover">
-      <div class="top">
-        <h3 class="title">{{title}}</h3>
-      </div>
-      <div class="bottom">
-        <div class="tech-wrap">
-          <p class="tech" v-for="(tech, index) in techArray" :key="index">{{tech}}</p>
+  <nuxt-link :to="id">
+    <div class="project">
+      <img class="background-image" :src="thumbnail" alt="jeff" />
+      <div class="cover">
+        <div class="top">
+          <h3 class="title">{{ title }}</h3>
+        </div>
+        <div class="bottom">
+          <div class="tech-wrap">
+            <p class="tech" v-for="(tech, index) in techArray" :key="index">{{ tech }}</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>
 export default {
-  props: ["thumbnail", "title", "techArray"],
+  props: ["thumbnail", "title", "techArray", "id"],
 
   mounted() {
     // console.log(this.techArray);
@@ -70,8 +72,8 @@ export default {
   color: white;
   position: relative;
   opacity: 0;
-  transition: .3s;
-  transition-delay: .3s;
+  transition: 0.3s;
+  transition-delay: 0.3s;
 }
 
 .top {
@@ -98,5 +100,6 @@ export default {
   font-size: 12px;
   letter-spacing: 1px;
   margin: 0 5px;
+  text-transform: capitalize;
 }
 </style>

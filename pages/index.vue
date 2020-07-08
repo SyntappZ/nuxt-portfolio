@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+     <Header />
     <div class="background">
       <div class="container">
         <div class="welcome">
@@ -17,6 +18,7 @@
 </template>
 
 <script>
+import Header from "~/components/Header.vue";
 import About from '~/components/sections/About';
 import Skills from '~/components/sections/Skills';
 import Projects from '~/components/sections/Projects'
@@ -26,7 +28,8 @@ export default {
     About,
     Skills,
     Projects,
-    Contact
+    Contact,
+    Header
   },
   
  

@@ -13,6 +13,7 @@
             :thumbnail="image.thumbnail"
             :title="image.title"
             :techArray="image.tech"
+            :id="image.id"
           />
         </div>
       </div>
@@ -29,7 +30,7 @@ export default {
     Project
   },
   computed: {
-    ...mapState("projects", ["projects", "projectsThumbnails"])
+    ...mapState("projects", ["projectsThumbnails"])
   }
 };
 </script>

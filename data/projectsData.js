@@ -32,11 +32,11 @@ const tech9 = ["vue", "framework 7", "cordova"];
 
 const projectsData = [
   new Project(
-    "1",
+    "Wizafy",
     "Wizafy",
     tech1,
     "https://wizafy.netlify.app",
-    "",
+    "https://github.com",
     `Wizafy is a spotify playlist generator but comes with many more features and is now my biggest project and i plan to work
      on this more in the future with continued updates to make it better, 
     if i knew about next at the time i would of made this app with it so i could get better seo on it by having it server side, 
@@ -51,7 +51,7 @@ const projectsData = [
     true
   ),
   new Project(
-    "2",
+    "Vortex_Player",
     "Vortex Player",
     tech2,
     "https://play.google.com/store/apps/details?id=com.vortexplayer",
@@ -68,7 +68,7 @@ const projectsData = [
     false
   ),
   new Project(
-    "3",
+    "Cdn_Javascript",
     "CDN Javascript",
     tech3,
     "https://cdn-javascript.netlify.com/",
@@ -81,7 +81,7 @@ const projectsData = [
     true
   ),
   new Project(
-    "4",
+    "Memester",
     "memester",
     tech4,
     "https://play.google.com/store/apps/details?id=syntappz.memester.fm7",
@@ -95,7 +95,7 @@ const projectsData = [
   ),
 
   new Project(
-    "5",
+    "The_Vault",
     "the vault",
     tech5,
     "https://vue-password-manager.web.app/",
@@ -109,7 +109,7 @@ const projectsData = [
     true
   ),
   new Project(
-    "6",
+    "Awesome_Recipes",
     "awesome recipes",
     tech6,
     "https://awesome-recipes.netlify.com",
@@ -124,7 +124,7 @@ const projectsData = [
   ),
 
   new Project(
-    "7",
+    "Regex_Js",
     "regex-js",
     tech7,
     "https://play.google.com/store/apps/details?id=io.syntappz.regex",
@@ -137,7 +137,7 @@ const projectsData = [
     false
   ),
   new Project(
-    "8",
+    "Image_Recipes",
     "image recipes",
     tech8,
     "https://image-recipes.netlify.com",
@@ -151,7 +151,7 @@ const projectsData = [
   ),
 
   new Project(
-    "9",
+    "Fusion_Ninja",
     "fusion ninja",
     tech9,
     "https://play.google.com/store/apps/details?id=io.syntappz.fusion",
@@ -166,57 +166,57 @@ const projectsData = [
 
 const projectsThumbnails = [
   {
-    id: "1",
+    id: "Wizafy",
     title: "Wizafy",
     thumbnail: "/project-thumbnails/wizafy.png",
     tech: tech1
   },
   {
-    id: "2",
+    id: "Vortex_Player",
     title: "Vortex player",
     thumbnail: "/project-thumbnails/vortex.png",
     tech: tech2
   },
   {
-    id: "3",
+    id: "Cdn_Javascript",
     title: "Cdn javascript",
     thumbnail: "/project-thumbnails/cdn.png",
     tech: tech3
   },
   {
-    id: "4",
+    id: "Memester",
     title: "Memester",
     thumbnail: "/project-thumbnails/meme.png",
     tech: tech4
   },
   {
-    id: "5",
+    id: "The_Vault",
     title: "The vault",
     thumbnail: "/project-thumbnails/password.png",
     tech: tech5
   },
   {
-    id: "6",
+    id: "Awesome_Recipes",
     title: "Awesome recipes",
     thumbnail: "/project-thumbnails/awesome.png",
     tech: tech6
   },
 
   {
-    id: "7",
+    id: "Regex_Js",
     title: "Regex js",
     thumbnail: "/project-thumbnails/regex.png",
     tech: tech7
   },
   {
-    id: "8",
+    id: "Image_Recipes",
     title: "Image recipes",
     thumbnail: "/project-thumbnails/image-recipes.png",
     tech: tech8
   },
 
   {
-    id: "9",
+    id: "Fusion_Ninja",
     title: "Fusion ninja",
     thumbnail: "/project-thumbnails/trials.png",
     tech: tech9
