@@ -2,28 +2,33 @@
   <section class="about-section" id="about">
     <div class="container">
       <div class="wrap">
-        <div class="about-box">
-          <SectionTitle title="about me" label="about" />
-          <div class="h-50"></div>
+        <transition>
+          <div class="about-box"  data-aos="fade-up">
+           
+              <SectionTitle title="about me" label="about" />
+      
+            <div class="h-50"></div>
 
-          <p class="desc">
-            Hi im Martyn, i am a web & app developer and i got into coding in 2018,
-            since then i have been using frameworks such as Vue & React to build websites/apps and i really love both of them,
-            i also like building apps with tech such as React Native & ionic and have just started to learn kotlin
-            so i can build native apps in the future, i have also started to get into some backend coding too such as node & express.
-          </p>
-          <br />
-          <p class="desc">
-            I've had many different jobs in the past but i feel now is the time for
-            me start my journey as a real web developer.
-          </p>
+            <p class="desc">
+              Hi im Martyn, i am a web & app developer and i got into coding in 2018,
+              since then i have been using frameworks such as Vue & React to build websites/apps and i really love both of them,
+              i also like building apps with tech such as React Native & ionic and have just started to learn kotlin
+              so i can build native apps in the future, i have also started to get into some backend coding too such as node & express.
+            </p>
+            <br />
+            <p class="desc">
+              I've had many different jobs in the past but i feel now is the time for
+              me start my journey as a real web developer.
+            </p>
 
-          <Button title="read more" buttonWidth="150" @onClick="scrollTo('.skills-section')" />
-        </div>
+            <Button title="read more" buttonWidth="150" @onClick="scrollTo('.skills-section')" />
+          </div>
+        </transition>
+
         <div class="about-box">
-          <div class="about-border"></div>
-          <img src="/images/desk.jpg" alt="desk image" />
-          <h2 class="signature">syntappz</h2>
+          <div class="about-border" data-aos="fade-up"></div>
+          <img src="/images/desk.jpg" alt="desk image" data-aos="fade-right" />
+          <h2 class="signature" data-aos="fade-right">syntappz</h2>
         </div>
       </div>
     </div>
@@ -36,9 +41,11 @@ import SectionTitle from "~/components/SectionTitle.vue";
 
 import { mapActions } from "vuex";
 export default {
+  props: ["onAbout"],
   components: {
     Button,
-    SectionTitle
+    SectionTitle,
+    
   },
   methods: {
     ...mapActions(["scrollTo"])

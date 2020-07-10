@@ -1,10 +1,10 @@
 <template>
-  <section class="contact-section">
+  <section class="contact-section" >
     <div class="container">
       <div class="wrap">
         <SectionTitle title="contact me" label="contact" />
         <div class="h-50"></div>
-        <div class="contact-wrap">
+        <div class="contact-wrap" data-aos="fade-up">
           <div class="contact-details">
             <div class="bottom-wrap">
               <h3>Email</h3>

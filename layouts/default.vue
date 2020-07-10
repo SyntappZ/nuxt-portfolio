@@ -7,7 +7,19 @@
 
 
 <script>
-export default {};
+export default {
+  mounted() {
+    window.addEventListener("resize", () => this.refresh());
+  },
+  beforeDestroy() {
+    window.removeEventListener("resize", () => this.refresh());
+  },
+  methods: {
+    refresh() {
+      AOS.refresh();
+    }
+  }
+};
 </script>
 
 
@@ -88,14 +100,6 @@ h4:before {
   height: 2px;
   background: var(--blue);
   top: 12px;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
 }
 
 .desc {

@@ -27,7 +27,7 @@
 import jump from "jump.js";
 import { mapActions } from "vuex";
 export default {
-  props: ["projectTitle", 'pageLink', 'github', 'isWebsite'],
+  props: ["projectTitle", 'pageLink', 'github', 'isWebsite', 'isVisable'],
   mounted() {
     document.addEventListener("scroll", this.scroller);
   },
@@ -37,22 +37,22 @@ export default {
   data() {
     return {
       navColor: "transparent",
-      isVisable: false
+      
     };
   },
   methods: {
-    scroller() {
-      scrollY > 70 ? (this.isVisable = true) : (this.isVisable = false);
-      if (scrollY < 10) {
-        this.resetScroll()
-      }
-    },
+    // scroller() {
+    //   scrollY > 70 ? (this.isVisable = true) : (this.isVisable = false);
+    //   if (scrollY < 10) {
+    //     this.resetScroll()
+    //   }
+    // },
 
     goBack() {
       this.$router.back()
     },
 
-    ...mapActions(["scrollTo", "resetScroll"]),
+    ...mapActions(["scrollTo"]),
 
     jumpToSection(target) {
       this.scrollTo(target);

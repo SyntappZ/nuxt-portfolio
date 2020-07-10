@@ -1,6 +1,6 @@
 <template>
   <nuxt-link :to="id">
-    <div class="project">
+    <div class="project" data-aos="fade-up">
       <img class="background-image" :src="thumbnail" alt="jeff" />
       <div class="cover">
         <div class="top">
@@ -18,11 +18,7 @@
 
 <script>
 export default {
-  props: ["thumbnail", "title", "techArray", "id"],
-
-  mounted() {
-    // console.log(this.techArray);
-  }
+  props: ["thumbnail", "title", "techArray", "id"]
 };
 </script>
 

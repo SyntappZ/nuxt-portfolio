@@ -43,7 +43,11 @@ const projectsData = [
     tech1,
     "https://wizafy.netlify.app",
     "https://github.com/SyntappZ/wizafy-code-sample",
-    `Wizafy is a spotify playlist generator but comes with many more features and is now my biggest project and i plan to work on this more in the
+    `Wizafy is spotify playlist generator but has many more features such as search, explore, add and remove playlists, albums and songs, it has a 
+    few different ways to generate a playlist such as generate from a song or from genres and also add attributes to tune the playlist to your 
+    liking and if you don’t like a song in the playlist you can reroll it until you find one to your liking.
+    
+    I plan to work on this more in the
     future with continued updates to make it better, if i knew about next at the time i would of made this app with it so i could get better seo on it by 
     having it server side, maybe i will refurbish it at a later time.
 

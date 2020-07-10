@@ -1,5 +1,5 @@
 <template>
-  <div class="year">
+  <div class="year" data-aos="fade-up">
     <div class="diamond"></div>
     <div class="wrap">
       <p>{{label}}</p>

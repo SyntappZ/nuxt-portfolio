@@ -5,15 +5,15 @@
       <div class="wrap">
         <SectionTitle :title="project.title" :label="pageType" />
       
-        <div class="tech-wrap">
+        <div class="tech-wrap" data-aos="fade-up">
           <p class="tech" v-for="tech in project.tech" :key="tech">{{ tech }}</p>
         </div>
-        <div class="carousel-section">
-          <Carousel :images="project.images" :isWebsite="project.isWebsite" />
+        <div class="carousel-section" data-aos="fade-up">
+          <Carousel class="grab" :images="project.images" :isWebsite="project.isWebsite" />
         </div>
         <div class="h-50"></div>
-        <h5 class="desc-title">Project details</h5>
-        <p class="desc">{{project.description}}</p>
+        <h5 class="desc-title" data-aos="fade-up">Project details</h5>
+        <p class="desc" data-aos="fade-up">{{project.description}}</p>
       </div>
     </div>
   <Footer />
@@ -21,6 +21,7 @@
 </template>
 
 <script>
+
 import { mapState } from "vuex";
 import Header from "~/components/Header.vue";
 import Carousel from "~/components/Carousel.vue";
@@ -88,6 +89,13 @@ export default {
   letter-spacing: 1px;
   text-transform: uppercase;
   /* border-bottom: solid 1px #d6d6d6; */
+}
+
+.grab {
+  cursor: grab;
+}
+.grab:active {
+  cursor: grabbing;
 }
 .button-wrap {
   height: 150px;

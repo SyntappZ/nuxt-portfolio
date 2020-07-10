@@ -24,6 +24,7 @@ const actions = {
   resetScroll({commit}) {
     commit("updateTarget", null);
   }
+  
 };
 
 export { state, getters, mutations, actions };
