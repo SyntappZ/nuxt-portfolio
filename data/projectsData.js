@@ -42,7 +42,7 @@ const projectsData = [
     "Wizafy",
     tech1,
     "https://wizafy.netlify.app",
-    "https://github.com",
+    "https://github.com/SyntappZ/wizafy-code-sample",
     `Wizafy is a spotify playlist generator but comes with many more features and is now my biggest project and i plan to work on this more in the
     future with continued updates to make it better, if i knew about next at the time i would of made this app with it so i could get better seo on it by 
     having it server side, maybe i will refurbish it at a later time.
