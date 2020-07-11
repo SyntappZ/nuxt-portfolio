@@ -27,13 +27,25 @@ export default {
 
 
 <style>
-@import "https://fonts.googleapis.com/css?family=Rouge+Script|Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Playfair+Display:400,400i,700,700i,900,900i";
+
+
 body {
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+ font-family: "Open Sans", sans-serif;
   line-height: 24px;
   color: #333;
 }
+
+/* body {
+  
+}
+
+h1 {
+ 
+}
+h4 {
+  
+} */
 
 :root {
   --blue: #425bb5;
@@ -73,7 +85,7 @@ body {
 }
 
 h1 {
-  font-family: "Playfair Display", serif;
+   font-family: "Playfair Display", serif;
   font-size: 70px;
   line-height: 70px;
   font-weight: 200;

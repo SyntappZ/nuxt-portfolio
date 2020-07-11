@@ -20,7 +20,8 @@ export default {
         rel: "stylesheet",
         href:
           "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-      }
+      },
+      // { ref: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&family=Open+Sans:wght@300;400;600;700&family=Playfair+Display:wght@400;500;600;700&family=Rouge+Script&display=swap"}
     ]
   },
   /*
@@ -30,7 +31,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~/assets/fonts/styles.css'],
   /*
    ** Plugins to load before mounting the App
    */
