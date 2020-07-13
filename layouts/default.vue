@@ -8,17 +8,7 @@
 
 <script>
 export default {
-  mounted() {
-    window.addEventListener("resize", () => this.refresh());
-  },
-  beforeDestroy() {
-    window.removeEventListener("resize", () => this.refresh());
-  },
-  methods: {
-    refresh() {
-      AOS.refresh();
-    }
-  }
+ 
 };
 </script>
 
@@ -117,5 +107,25 @@ h4:before {
 .desc {
   color: var(--desc);
   font-weight: 300;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 28px;
+    margin: 0;
+    line-height: 34px;
+  }
+  h4 {
+    font-size: 14px;
+    margin-left: 20px;
+  }
+  h4:before {
+ 
+  width: 14px;
+  left: -20px;
+  
+ 
+}
+
 }
 </style>

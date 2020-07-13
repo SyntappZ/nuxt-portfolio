@@ -52,4 +52,9 @@ export default {
   flex-wrap: wrap;
   margin: 50px 0;
 }
+@media (max-width: 1024px) {
+  .projects {
+  justify-content: center;
+  }
+}
 </style>

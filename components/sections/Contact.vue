@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-section" >
+  <section class="contact-section">
     <div class="container">
       <div class="wrap">
         <SectionTitle title="contact me" label="contact" />
@@ -66,7 +66,7 @@ export default {
 .contact-wrap {
   display: flex;
   flex-wrap: wrap;
-  height: 400px;
+  min-height: 400px;
 }
 .contact-details {
   flex: 3;
@@ -98,7 +98,7 @@ a {
   margin-right: 8px;
   cursor: pointer;
   color: inherit;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .icons i:hover {
@@ -109,10 +109,12 @@ a {
   flex: 5;
   display: flex;
   align-items: flex-end;
+
   height: 100%;
 }
 .input {
   width: 100%;
+  min-width: 200px;
   height: 50px;
   margin-bottom: 10px;
   border-radius: 0;
@@ -152,5 +154,26 @@ a {
   width: 100%;
   border: none;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .contact-wrap {
+    flex-direction: column-reverse;
+  }
+  .contact-details {
+    text-align: center;
+  }
+  .contact-form {
+    margin-bottom: 30px;
+  }
+  .bottom-wrap {
+    width: 100%;
+  }
+  .icons {
+    justify-content: center;
+  }
+  .icons i {
+    margin: 0 4px;
+  }
 }
 </style>

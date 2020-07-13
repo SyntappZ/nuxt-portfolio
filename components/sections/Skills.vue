@@ -64,4 +64,11 @@ export default {
   width: 2px;
   height: 100%;
 }
+
+
+@media (max-width: 1024px) { 
+  .bar {
+    display: none;
+  }
+}
 </style>

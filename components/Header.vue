@@ -41,12 +41,7 @@ export default {
     };
   },
   methods: {
-    // scroller() {
-    //   scrollY > 70 ? (this.isVisable = true) : (this.isVisable = false);
-    //   if (scrollY < 10) {
-    //     this.resetScroll()
-    //   }
-    // },
+   
 
     goBack() {
       this.$router.back()
@@ -86,6 +81,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 .project-links a {
   text-decoration: none;
@@ -102,6 +98,7 @@ nav {
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 .nav-links p {
   text-transform: uppercase;
@@ -125,4 +122,13 @@ nav {
   align-items: center;
   font-size: 18px;
 }
+
+@media (max-width: 1024px) { 
+ .nav-links p {
+   padding: 20px 10px;
+ }
+ 
+}
+
+
 </style>

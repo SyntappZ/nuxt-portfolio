@@ -92,4 +92,19 @@ export default {
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
+@media (max-width: 1024px) { 
+  .diamond {
+    display: none;
+  }
+  .wrap {
+    left: 0;
+   padding: 2em 0;
+  }
+}
+@media (max-width: 600px) {
+  
+}
+
+ 
 </style>

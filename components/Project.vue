@@ -98,4 +98,20 @@ export default {
   margin: 0 5px;
   text-transform: capitalize;
 }
+
+@media (max-width: 1024px) {
+  .project {
+    width: 320px;
+    height: 320px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .project {
+    width: 250px;
+    height: 250px;
+    margin: 10px auto;
+  }
+}
 </style>

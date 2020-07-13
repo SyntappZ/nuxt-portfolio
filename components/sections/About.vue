@@ -3,10 +3,9 @@
     <div class="container">
       <div class="wrap">
         <transition>
-          <div class="about-box"  data-aos="fade-up">
-           
-              <SectionTitle title="about me" label="about" />
-      
+          <div class="about-box" data-aos="fade-up">
+            <SectionTitle title="about me" label="about" />
+
             <div class="h-50"></div>
 
             <p class="desc">
@@ -25,7 +24,7 @@
           </div>
         </transition>
 
-        <div class="about-box">
+        <div class="about-box image-wrap">
           <div class="about-border" data-aos="fade-up"></div>
           <img src="/images/desk.jpg" alt="desk image" data-aos="fade-right" />
           <h2 class="signature" data-aos="fade-right">syntappz</h2>
@@ -44,11 +43,24 @@ export default {
   props: ["onAbout"],
   components: {
     Button,
-    SectionTitle,
-    
+    SectionTitle
+  },
+  mounted() {
+     this.windowWidth = window.innerWidth
+     
+  },
+  data() {
+    return {
+      windowWidth: ""
+    };
   },
   methods: {
     ...mapActions(["scrollTo"])
+  },
+  computed: {
+    mobile() {
+      return this.windowWidth < 600;
+    }
   }
 };
 </script>
@@ -81,7 +93,7 @@ img {
   flex: 1 1 400px;
   height: 100%;
 }
-.about-box:nth-child(2) {
+.image-wrap {
   display: flex;
   justify-content: flex-end;
   position: relative;
@@ -106,5 +118,22 @@ img {
   left: 50px;
   top: 50px;
   z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .about-border {
+    display: none;
+  }
+  .about-box {
+    opacity: 1;
+    flex: 1 1 100%;
+    height: auto;
+  }
+  .image-wrap {
+    justify-content: center;
+  }
+  img {
+    width: 100%;
+  }
 }
 </style>
