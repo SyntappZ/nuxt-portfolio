@@ -7,9 +7,7 @@
 
 
 <script>
-export default {
- 
-};
+export default {};
 </script>
 
 
@@ -17,25 +15,12 @@ export default {
 
 
 <style>
-
-
 body {
   margin: 0;
- font-family: "Open Sans", sans-serif;
+  font-family: "Open Sans", sans-serif;
   line-height: 24px;
   color: #333;
 }
-
-/* body {
-  
-}
-
-h1 {
- 
-}
-h4 {
-  
-} */
 
 :root {
   --blue: #425bb5;
@@ -75,7 +60,7 @@ h4 {
 }
 
 h1 {
-   font-family: "Playfair Display", serif;
+  font-family: "Playfair Display", serif;
   font-size: 70px;
   line-height: 70px;
   font-weight: 200;
@@ -111,21 +96,17 @@ h4:before {
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 28px;
+    font-size: 32px;
     margin: 0;
-    line-height: 34px;
+    line-height: 36px;
   }
   h4 {
     font-size: 14px;
     margin-left: 20px;
   }
   h4:before {
- 
-  width: 14px;
-  left: -20px;
-  
- 
-}
-
+    width: 14px;
+    left: -20px;
+  }
 }
 </style>

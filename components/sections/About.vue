@@ -80,23 +80,21 @@ export default {
   align-items: center;
   flex-wrap: wrap;
 }
+.image-wrap {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+}
+
 
 img {
   max-width: 70%;
-  /* object-fit: cover; */
   height: auto;
-  /* filter:grayscale(100%); */
-  /* opacity: .5; */
 }
 
 .about-box {
   flex: 1 1 400px;
   height: 100%;
-}
-.image-wrap {
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
 }
 
 .signature {
@@ -127,13 +125,18 @@ img {
   .about-box {
     opacity: 1;
     flex: 1 1 100%;
-    height: auto;
+    
   }
   .image-wrap {
-    justify-content: center;
+    display: block;
+    width: 100%;
+    
+
   }
   img {
-    width: 100%;
+    
+    max-width: 100%;
+    
   }
 }
 </style>

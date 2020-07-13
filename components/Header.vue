@@ -5,7 +5,7 @@
         <div class="back-button" @click="goBack">
          <i class="fa fa-arrow-left" aria-hidden="true"></i>
         </div>
-        <p>{{projectTitle}}</p>
+        <p class="project-title">{{projectTitle}}</p>
         <div class="project-links">
           <a :href="github" target="_">Github</a>
           <a :href="pageLink" target="_">Visit {{isWebsite ? 'site' : 'app'}}</a>
@@ -75,7 +75,6 @@ nav {
 
 .project-links {
   height: 100%;
-
   position: absolute;
   right: 50px;
   display: flex;
@@ -123,9 +122,24 @@ nav {
   font-size: 18px;
 }
 
-@media (max-width: 1024px) { 
+@media (max-width: 600px) { 
  .nav-links p {
    padding: 20px 10px;
+ }
+ .project-links {
+   position: relative;
+   width: 100%;
+   justify-content: space-between;
+   right:0;
+ }
+ .project-title {
+   width: 100%;
+ }
+ .back-button {
+  width: auto;
+  left: 30px;
+  top: 23px;
+  height: auto;
  }
  
 }

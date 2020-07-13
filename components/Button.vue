@@ -35,4 +35,11 @@ export default {
 .btn:hover {
   transform: scale(0.9);
 }
+
+@media (max-width: 600px) {
+  .btn {
+  margin: 50px auto;
+  }
+}
+
 </style>

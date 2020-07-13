@@ -109,8 +109,8 @@ export default {
 
 @media (max-width: 600px) {
   .project {
-    width: 250px;
-    height: 250px;
+    max-width: 300px;
+    height: 300px;
     margin: 10px auto;
   }
 }

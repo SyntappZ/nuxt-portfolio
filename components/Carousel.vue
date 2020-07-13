@@ -54,4 +54,17 @@ export default {
 img {
   width: 100%;
 }
+
+@media (max-width: 1024px) { 
+  .slide {
+    height: 350px;
+  }
+ 
+}
+
+@media (max-width: 600px) { 
+  .slide {
+    height: 150px;
+  }
+}
 </style>

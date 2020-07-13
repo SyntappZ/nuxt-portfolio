@@ -79,7 +79,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  /* border-top: solid 1px #d6d6d6; */
+
 }
 .tech {
   margin: 0 50px;
@@ -88,7 +88,7 @@ export default {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  /* border-bottom: solid 1px #d6d6d6; */
+
 }
 
 .grab {
@@ -116,6 +116,16 @@ export default {
   font-weight: 400;
   font-size: 15px;
   white-space: pre-line;
+}
+
+
+
+@media (max-width: 600px) { 
+ .tech {
+   margin: 0 10px;
+   font-size: 10px;
+ }
+ 
 }
 
 
