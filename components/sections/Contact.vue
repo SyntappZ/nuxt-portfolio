@@ -34,7 +34,10 @@
               <input class="input" type="text" placeholder="Your E-Mail" v-model="email" />
               <input class="input" type="text" placeholder="Phone number" v-model="phone" />
               <textarea placeholder="your message" class="text-area" rows="6" v-model="message"></textarea>
-              <button class="submit-button" @click="sendDetails">send</button>
+              <button class="submit-button" @click="sendDetails">
+                <div class="loader" v-if="showLoader"></div>
+                <p v-else>send</p>
+              </button>
             </form>
           </div>
         </div>
@@ -62,6 +65,7 @@ export default {
       response: "",
       sent: true,
       showMessage: false,
+      showLoader: false,
       messageStyle: "sent-message",
       error: "red",
       success: "success"
@@ -74,6 +78,7 @@ export default {
   },
   methods: {
     async sendDetails(e) {
+      this.showLoader = true;
       e.preventDefault();
       const data = {
         name: this.name,
@@ -91,6 +96,7 @@ export default {
       })
         .then(res => res.json())
         .then(res => {
+          this.showLoader = false;
           this.response = res.message;
           this.sent = res.sent;
           this.showMessage = true;
@@ -219,7 +225,7 @@ a {
 .submit-button {
   background-color: var(--blue);
   color: #fff;
-  padding: 15px 40px;
+  height: 50px;
   line-height: 1.5;
   font-size: 14px;
   border-radius: 0;
@@ -229,6 +235,27 @@ a {
   width: 100%;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 4px solid #567af1;
+  border-top: 4px solid #ffffff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 1024px) {
