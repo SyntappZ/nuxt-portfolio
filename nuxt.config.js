@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 export default {
   mode: "universal",
   /*
@@ -31,6 +33,7 @@ export default {
   /*
    ** Global CSS
    */
+  serverMiddleware: [ '~/api/index'],
   css: ['~/assets/fonts.css'],
   /*
    ** Plugins to load before mounting the App
@@ -41,7 +44,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: [],
+  buildModules: ['@nuxtjs/dotenv'],
   /*
    ** Nuxt.js modules
    */

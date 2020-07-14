@@ -4,7 +4,7 @@
       <div class="wrap">
         <SectionTitle title="contact me" label="contact" />
         <div class="h-50"></div>
-        <div class="contact-wrap" data-aos="fade-up">
+        <div class="contact-wrap aos-animate" data-aos="fade-up">
           <div class="contact-details">
             <div class="bottom-wrap">
               <h3>Email</h3>
@@ -26,13 +26,18 @@
               </div>
             </div>
           </div>
+
           <div class="contact-form">
-            <form action method="post" name="contact">
-              <input class="input" type="text" placeholder="Your name" />
-              <input class="input" type="text" placeholder="Your E-Mail" />
-              <input class="input" type="text" placeholder="Phone number" />
-              <textarea placeholder="your message" class="text-area" rows="6"></textarea>
-              <button type="submit" class="submit-button">send</button>
+            <p
+              :class="[sent ? success : error, messageStyle]"
+              :style="messageOpacity"
+            >{{response}}</p>
+            <form>
+              <input class="input" type="text" placeholder="Your name" v-model="name" />
+              <input class="input" type="text" placeholder="Your E-Mail" v-model="email" />
+              <input class="input" type="text" placeholder="Phone number" v-model="phone" />
+              <textarea placeholder="your message" class="text-area" rows="6" v-model="message"></textarea>
+              <button class="submit-button" @click="sendDetails">send</button>
             </form>
           </div>
         </div>
@@ -49,6 +54,56 @@ export default {
   components: {
     Footer,
     SectionTitle
+  },
+  data() {
+    return {
+      name: "",
+      email: "",
+      message: "",
+      phone: "",
+      subject: "message from portfolio",
+      response: "hello",
+      sent: true,
+      showMessage: false,
+      messageStyle: "sent-message",
+      error: "red",
+      success: "success"
+    };
+  },
+  computed: {
+    messageOpacity() {
+      return this.showMessage ? {opacity: '1'} : {opacity: '0'}
+    }
+  },
+  methods: {
+    async sendDetails(e) {
+      e.preventDefault();
+      const data = {
+        name: this.name,
+        email: this.email,
+        message: this.message,
+        phone: this.phone,
+        subject: this.subject
+      };
+      fetch("/api/contact_form", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+        .then(res => res.json())
+        .then(res => {
+          
+          this.response = res.message;
+          this.sent = res.sent;
+          this.showMessage = true;
+          setTimeout(() => {
+            this.showMessage = false;
+          }, 5000);
+        })
+        .catch(err => console.log(err));
+    }
   }
 };
 </script>
@@ -66,7 +121,7 @@ export default {
 .contact-wrap {
   display: flex;
   flex-wrap: wrap;
-  min-height: 400px;
+  height: 400px;
 }
 .contact-details {
   flex: 3;
@@ -80,6 +135,14 @@ h3 {
   font-size: 24px;
   font-weight: 500;
   line-height: 1.1;
+}
+
+.success {
+  color: #425bb5;
+}
+
+.red {
+  color: red;
 }
 
 .email {
@@ -109,8 +172,20 @@ a {
   flex: 5;
   display: flex;
   align-items: flex-end;
-
+  position: relative;
   height: 100%;
+}
+
+.sent-message {
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  right: 0;
+  
+  
+  text-transform: capitalize;
+  transition: .5s ease;
+  /* opacity: 0; */
 }
 .input {
   width: 100%;
