@@ -94,6 +94,10 @@ export default {
           this.response = res.message;
           this.sent = res.sent;
           this.showMessage = true;
+          this.name = "";
+          this.email = "";
+          this.message = "";
+          this.phone = "";
           setTimeout(() => {
             this.showMessage = false;
           }, 5000);
