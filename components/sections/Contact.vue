@@ -28,10 +28,7 @@
           </div>
 
           <div class="contact-form">
-            <p
-              :class="[sent ? success : error, messageStyle]"
-              :style="messageOpacity"
-            >{{response}}</p>
+            <p :class="[sent ? success : error, messageStyle]" :style="messageOpacity">{{response}}</p>
             <form>
               <input class="input" type="text" placeholder="Your name" v-model="name" />
               <input class="input" type="text" placeholder="Your E-Mail" v-model="email" />
@@ -62,7 +59,7 @@ export default {
       message: "",
       phone: "",
       subject: "message from portfolio",
-      response: "hello",
+      response: "",
       sent: true,
       showMessage: false,
       messageStyle: "sent-message",
@@ -72,7 +69,7 @@ export default {
   },
   computed: {
     messageOpacity() {
-      return this.showMessage ? {opacity: '1'} : {opacity: '0'}
+      return this.showMessage ? { opacity: "1" } : { opacity: "0" };
     }
   },
   methods: {
@@ -94,7 +91,6 @@ export default {
       })
         .then(res => res.json())
         .then(res => {
-          
           this.response = res.message;
           this.sent = res.sent;
           this.showMessage = true;
@@ -121,13 +117,14 @@ export default {
 .contact-wrap {
   display: flex;
   flex-wrap: wrap;
-  height: 400px;
+  min-height: 400px;
 }
 .contact-details {
   flex: 3;
   display: flex;
   align-items: flex-end;
-  height: 100%;
+
+  min-width: 300px;
 }
 h3 {
   margin-top: 20px;
@@ -173,6 +170,7 @@ a {
   display: flex;
   align-items: flex-end;
   position: relative;
+  padding-top: 30px;
   height: 100%;
 }
 
@@ -180,12 +178,10 @@ a {
   font-weight: 600;
   position: absolute;
   top: 0;
-  right: 0;
-  
-  
+  left: 50%;
+  margin-left: -50px;
   text-transform: capitalize;
-  transition: .5s ease;
-  /* opacity: 0; */
+  transition: 1s ease;
 }
 .input {
   width: 100%;
