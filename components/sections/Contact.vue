@@ -28,13 +28,29 @@
           </div>
 
           <div class="contact-form">
-            <p :class="[sent ? success : error, messageStyle]" :style="messageOpacity">{{response}}</p>
-            <form>
-              <input class="input" type="text" placeholder="Your name" v-model="name" />
-              <input class="input" type="text" placeholder="Your E-Mail" v-model="email" />
+            <p
+              :class="[sent ? success : error, messageStyle]"
+              :style="messageOpacity"
+            >{{successMessage}}</p>
+            <form @submit="sendDetails">
+              <input class="input" type="text" placeholder="Your name" v-model="name" required />
+              <input
+                :style="invalidMail"
+                class="input"
+                type="text"
+                placeholder="Your E-Mail"
+                v-model="email"
+                required
+              />
               <input class="input" type="text" placeholder="Phone number" v-model="phone" />
-              <textarea placeholder="your message" class="text-area" rows="6" v-model="message"></textarea>
-              <button class="submit-button" @click="sendDetails">
+              <textarea
+                placeholder="your message"
+                class="text-area"
+                rows="6"
+                v-model="message"
+                required
+              ></textarea>
+              <button type="submit" class="submit-button">
                 <div class="loader" v-if="showLoader"></div>
                 <p v-else>send</p>
               </button>
@@ -62,21 +78,31 @@ export default {
       message: "",
       phone: "",
       subject: "message from portfolio",
-      response: "",
+      successMessage: "",
       sent: true,
       showMessage: false,
       showLoader: false,
       messageStyle: "sent-message",
       error: "red",
-      success: "success"
+      success: "success",
+      isInvalidMail: false
     };
   },
   computed: {
     messageOpacity() {
       return this.showMessage ? { opacity: "1" } : { opacity: "0" };
+    },
+    invalidMail() {
+      return this.isInvalidMail ? { borderColor: "red" } : null;
     }
   },
   methods: {
+    validateEmail(email) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+        return true;
+      }
+      return false;
+    },
     async sendDetails(e) {
       this.showLoader = true;
       e.preventDefault();
@@ -87,28 +113,40 @@ export default {
         phone: this.phone,
         subject: this.subject
       };
-      fetch("/api/contact_form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
-        .then(res => res.json())
-        .then(res => {
-          this.showLoader = false;
-          this.response = res.message;
-          this.sent = res.sent;
-          this.showMessage = true;
-          this.name = "";
-          this.email = "";
-          this.message = "";
-          this.phone = "";
-          setTimeout(() => {
-            this.showMessage = false;
-          }, 5000);
+      if (this.validateEmail(this.email)) {
+        fetch("/api/contact_form", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(data)
         })
-        .catch(err => console.log(err));
+          .then(res => res.json())
+          .then(res => {
+            this.showLoader = false;
+            this.successMessage = res.message;
+            this.sent = res.sent;
+            this.showMessage = true;
+            this.name = "";
+            this.email = "";
+            this.message = "";
+            this.phone = "";
+            setTimeout(() => {
+              this.showMessage = false;
+            }, 5000);
+          })
+          .catch(err => console.log(err));
+      } else {
+        this.isInvalidMail = true;
+        this.showMessage = true;
+        this.successMessage = "Invalid Email! Please check your email";
+        this.sent = false;
+        this.showLoader = false;
+        setTimeout(() => {
+          this.showMessage = false;
+          this.isInvalidMail = false;
+        }, 5000);
+      }
     }
   }
 };
@@ -188,8 +226,7 @@ a {
   font-weight: 600;
   position: absolute;
   top: 0;
-  left: 50%;
-  margin-left: -50px;
+  right: 0;
   text-transform: capitalize;
   transition: 1s ease;
 }
@@ -276,6 +313,11 @@ a {
   }
   .icons i {
     margin: 0 4px;
+  }
+}
+@media (max-width: 600px) {
+  .sent-message {
+    font-size: 12px;
   }
 }
 </style>
