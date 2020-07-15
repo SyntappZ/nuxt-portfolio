@@ -14,7 +14,7 @@ class Project {
 const images = (n, path) =>
   Array(n)
     .fill(1)
-    .map((x, i) => `${path}${i + x}.png`);
+    .map((x, i) => `${path}${i + x}.jpg`);
 
 const wizImages = images(12, "/wizard/wizafy");
 const aweImages = images(4, "/awesome/awesome");

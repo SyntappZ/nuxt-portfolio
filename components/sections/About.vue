@@ -26,7 +26,7 @@
 
         <div class="about-box image-wrap">
           <div class="about-border" data-aos="fade-up"></div>
-          <img src="/images/desk.jpg" alt="desk image" data-aos="fade-right" />
+          <img src="/images/desk1.jpg" alt="desk image" data-aos="fade-right" />
           <h2 class="signature" data-aos="fade-right">syntappz</h2>
         </div>
       </div>
@@ -99,7 +99,6 @@ img {
 
 .signature {
   font-family: "Rouge Script", cursive;
-  /* color: var(--blue); */
   font-weight: 100;
   color: white;
   top: 10px;

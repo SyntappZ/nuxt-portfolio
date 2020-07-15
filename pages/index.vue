@@ -1,7 +1,7 @@
 <template>
   <div class="main">
     <StartScreen :backgroundLoaded="backgroundLoaded" />
-    <img src="/images/background.jpg" alt="wolf background" @load="loaded" />
+    <img src="/images/background1.jpg" alt="wolf background" @load="loaded" />
     <Header :isVisable="isVisable" />
     <div class="background">
       <div class="container">
