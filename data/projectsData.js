@@ -65,7 +65,9 @@ const projectsData = [
     tech2,
     "https://play.google.com/store/apps/details?id=com.vortexplayer",
     "https://github.com/SyntappZ/vortex-mp3-player",
-    `This is my first react native project and the biggest project i have made so far, making this app i learn a lot about optimization and avoiding memory leaks,
+    `This app is outdated will be upgraded to new version shortly.
+    
+    This is my first react native project and the biggest project i have made so far, making this app i learn a lot about optimization and avoiding memory leaks,
      there are a couple problems with this app that i have found which i just cannot fix yet, one being that getting track metadata takes a long time, i read this
      is due to the react native bridge so that is unavoidable at the moment. The library i used has a batch reciever but it is not working at this moment in time...
      read more on github.
