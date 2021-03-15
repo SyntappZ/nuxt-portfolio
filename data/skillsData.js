@@ -1,7 +1,7 @@
 const skillsData = [
     {
       label: "Jan 2020 - Present",
-      title: "starting Backend",
+      title: "Some Backend & app development",
       subtitle: "node & express",
       skills: [
         "react native",
@@ -9,18 +9,28 @@ const skillsData = [
         "ssr",
         "node",
         "express",
-        "mongoDB"
+        "mongoDB",
+        "kotlin",
+        "redux"
+        
       ],
-      descTitle: "In with the new",
-      description: `So far this year i have build my 2 biggest projects playist wizard and vortex player, both with react as vortex player
-      was with react native which was actualy one of the reasons that i decided to learn kotlin because as i built vortex i realised this app
-      will never be the way i want it unless i build it as a pure native app with kolin or java, as of 22 june i have only learnt the basics of 
-      kotlin but im getting there.
+      descTitle: "Redesigning apps",
+      description: `2021
+
+      In 2021 i have mainly been using react native and redux to upgrade my old apps, i fully upgraded my regex js app with react native/kotlin and works much better and better ux/ui,
+      i had to learn some kotlin for this app due to react native limitations and i will continue to learn kotlin as it is very differnt than javascript and have been enjoying it.
+
+      I am also working on my vortex player upgrade adding a redux state management system and also many of the problems in the old one fixed like the having to wait a long time
+      to fetch the tracks over the react native bridge, this is now instant as it should be, it also has a full redesign and theme system, this app should be done by the end of march 2021.
+
+
+      2020
+
+      So far this year i have build my 2 biggest projects playist wizard and vortex player, both with react as vortex player
+      was with react native, the 2020 version of this app is not working well and it took a long time to pull 
       
-      As of 22 june i have built one server with express and node and database with mongoDB just to get firmilular with them, i also started
-      to jump back into vue and learn nuxt so i can have my next app with a backend and also SSR, also this portfolio will be build with nuxt.
-      
-      To be continued...`
+      In 2020 i messed around with node, express and mongodb just to get a feel with it, i built a couple of servers one included in this portfolio for the contact system,
+      but nothing major built with a backend but atleast i get the jist of it and feel i will pick it up easy if i ever need to make a backend.`
     },
     {
       label: "Jan 2019 - Dec 2019",

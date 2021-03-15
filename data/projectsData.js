@@ -21,7 +21,7 @@ const aweImages = images(4, "/awesome/awesome");
 const vaultImages = images(4, "/vault/vault");
 const cdnImages = images(3, "/cdn/cdn");
 const recipeImages = images(3, "/imageRecipe/recipe");
-const regexImages = images(5, "/regexjs/regex");
+const regexImages = images(8, "/regexjs/regex");
 const memesterImages = images(6, "/memester/meme");
 const fusionImages = images(5, "/fusion/fusion");
 const vortexImages = images(5, "/vortex/vortex");
@@ -32,7 +32,7 @@ const tech3 = ["react"];
 const tech4 = ["vue", "framework 7", "cordova"];
 const tech5 = ["vue", "vuetify", "firebase"];
 const tech6 = ["javascript", "sass"];
-const tech7 = ["ionic", "angular", "cordova"];
+const tech7 = ["react native", "kotlin", "redux"];
 const tech8 = ["react", "firebase", "google vision"];
 const tech9 = ["vue", "framework 7", "cordova"];
 
@@ -133,9 +133,12 @@ const projectsData = [
     "regex-js",
     tech7,
     "https://play.google.com/store/apps/details?id=io.syntappz.regex",
-    "https://github.com/SyntappZ/regex-cheatsheet",
-    `I made this app with ionic/angular and this app has full documents on javaScript regular expressions and most will apply to other languages too.
-     It also has a regex tester which can test with match which will highlight the matched results, or can replace words with replace.`,
+    null,
+    `The old app i made of this was with ionic/angular, but i remade it with react native/kotlin as the old design was bad and i got a few 1 stars for it,
+     i was very new to making apps, this app has full documents on javaScript regular expressions and most will apply to other languages too.
+     It has a regex tester which will highlight the matched results, it has a history and save section so you can save your regex for later,
+     it also has a light and dark mode with premium there are 12 themes and quick access symbols.
+     React native doesn't support positive/negative lookbehinds so i had to make my own module with kotlin to handle this.`,
 
     regexImages,
     false
@@ -181,11 +184,12 @@ const projectsThumbnails = [
     tech: tech2
   },
   {
-    id: "Cdn_Javascript",
-    title: "Cdn javascript",
-    thumbnail: "/project-thumbnails/cdn.png",
-    tech: tech3
+    id: "Regex_Js",
+    title: "Regex js",
+    thumbnail: "/project-thumbnails/regex.png",
+    tech: tech7
   },
+ 
   {
     id: "Memester",
     title: "Memester",
@@ -204,13 +208,14 @@ const projectsThumbnails = [
     thumbnail: "/project-thumbnails/awesome.png",
     tech: tech6
   },
-
   {
-    id: "Regex_Js",
-    title: "Regex js",
-    thumbnail: "/project-thumbnails/regex.png",
-    tech: tech7
+    id: "Cdn_Javascript",
+    title: "Cdn javascript",
+    thumbnail: "/project-thumbnails/cdn.png",
+    tech: tech3
   },
+
+ 
   {
     id: "Image_Recipes",
     title: "Image recipes",

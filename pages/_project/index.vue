@@ -1,33 +1,56 @@
 <template>
   <div class="project-page">
-    <Header :projectTitle="project.title" :pageLink="project.pageLink" :github="project.github" :isWebsite="project.isWebsite" />
+    <Header
+      :projectTitle="project.title"
+      :pageLink="project.pageLink"
+      :github="project.github"
+      :isWebsite="project.isWebsite"
+    />
     <div class="container">
       <div class="wrap">
         <SectionTitle :title="project.title" :label="pageType" />
-      
+
         <div class="tech-wrap" data-aos="fade-up">
-          <p class="tech" v-for="tech in project.tech" :key="tech">{{ tech }}</p>
+          <p class="tech" v-for="tech in project.tech" :key="tech">
+            {{ tech }}
+          </p>
         </div>
-        <div class="carousel-section" data-aos="fade-up">
-          <Carousel class="grab" :images="project.images" :isWebsite="project.isWebsite" />
+        <div
+          v-if="project.isWebsite"
+          class="carousel-section"
+          data-aos="fade-up"
+        >
+          <Carousel
+            class="grab"
+            :images="project.images"
+            :isWebsite="project.isWebsite"
+          />
+        </div>
+        <div v-else class="mobile-images">
+          <img
+            class="project-image"
+            :src="img"
+            alt="img"
+            v-for="img in project.images"
+            :key="img"
+          />
         </div>
         <div class="h-50"></div>
         <h5 class="desc-title" data-aos="fade-up">Project details</h5>
-        <p class="desc" data-aos="fade-up">{{project.description}}</p>
+        <p class="desc" data-aos="fade-up">{{ project.description }}</p>
       </div>
     </div>
-  <Footer />
+    <Footer />
   </div>
 </template>
 
 <script>
-
 import { mapState } from "vuex";
 import Header from "~/components/Header.vue";
 import Carousel from "~/components/Carousel.vue";
 import Button from "~/components/Button.vue";
-import Footer from "~/components/Footer.vue"
-import SectionTitle from "~/components/SectionTitle.vue"
+import Footer from "~/components/Footer.vue";
+import SectionTitle from "~/components/SectionTitle.vue";
 export default {
   components: {
     Header,
@@ -50,8 +73,7 @@ export default {
     ...mapState("projects", ["projects"]),
     pageType() {
       return this.project.isWebsite ? "Website" : "Mobile App";
-    },
- 
+    }
   }
 };
 </script>
@@ -79,7 +101,6 @@ export default {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-
 }
 .tech {
   margin: 0 50px;
@@ -88,7 +109,6 @@ export default {
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-
 }
 
 .grab {
@@ -118,15 +138,26 @@ export default {
   white-space: pre-line;
 }
 
-
-
-@media (max-width: 600px) { 
- .tech {
-   margin: 0 10px;
-   font-size: 10px;
- }
- 
+.mobile-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
 }
 
+.project-image {
+  width: 220px;
+  border-radius: 15px;
+  margin: 10px;
+  display: block;
+  
+}
 
+@media (max-width: 600px) {
+  .tech {
+    margin: 0 10px;
+    font-size: 10px;
+  }
+}
 </style>

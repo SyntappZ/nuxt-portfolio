@@ -7,7 +7,7 @@
         </div>
         <p class="project-title">{{projectTitle}}</p>
         <div class="project-links">
-          <a :href="github" target="_">Github</a>
+          <a :href="github" target="_" >{{github ? "Github" : "No Github"}}</a>
           <a :href="pageLink" target="_">Visit {{isWebsite ? 'site' : 'app'}}</a>
         </div>
       </div>
