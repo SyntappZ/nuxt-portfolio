@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .carousel {
-  background: #e6e6e6;
+  /* background: #e6e6e6; */
   padding-bottom: 10px;
 }
 .slide {

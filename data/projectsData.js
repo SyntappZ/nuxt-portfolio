@@ -1,5 +1,5 @@
 class Project {
-  constructor(id, title, tech, link, github, desc, images, type) {
+  constructor(id, title, tech, link, github, desc, images, type, video) {
     this.id = id;
     this.title = title;
     this.tech = tech;
@@ -8,6 +8,7 @@ class Project {
     this.description = desc;
     this.images = images.map(img => `/project-images${img}`);
     this.isWebsite = type;
+    this.video = video
   }
 }
 
@@ -24,10 +25,10 @@ const recipeImages = images(3, "/imageRecipe/recipe");
 const regexImages = images(8, "/regexjs/regex");
 const memesterImages = images(6, "/memester/meme");
 const fusionImages = images(5, "/fusion/fusion");
-const vortexImages = images(5, "/vortex/vortex");
+const vortexImages = images(8, "/vortex/vortex");
 
 const tech1 = ["react", "spotify api"];
-const tech2 = ["react native"];
+const tech2 = ["react native", "redux"];
 const tech3 = ["react"];
 const tech4 = ["vue", "framework 7", "cordova"];
 const tech5 = ["vue", "vuetify", "firebase"];
@@ -57,16 +58,19 @@ const projectsData = [
     `,
 
     wizImages,
-    true
+    true,
+    "wizafy/wizafyVideo.mp4"
   ),
   new Project(
     "Vortex_Player",
     "Vortex Player",
     tech2,
     "https://play.google.com/store/apps/details?id=com.vortexplayer",
-    "https://github.com/SyntappZ/vortex-mp3-player",
-    `This app is outdated will be upgraded to new version shortly.
-    
+    "https://github.com/SyntappZ/vortex-player",
+    `version 2.0.0
+    This version is a full revamp which fixes all the problems with version 1.0.0, it has a full redesign, redux state management and added features.
+
+    version 1.0.0
     This is my first react native project and the biggest project i have made so far, making this app i learn a lot about optimization and avoiding memory leaks,
      there are a couple problems with this app that i have found which i just cannot fix yet, one being that getting track metadata takes a long time, i read this
      is due to the react native bridge so that is unavoidable at the moment. The library i used has a batch reciever but it is not working at this moment in time...
@@ -75,7 +79,8 @@ const projectsData = [
         `,
 
     vortexImages,
-    false
+    false,
+    "vortex/vortexScreenRecord.mp4"
   ),
   new Project(
     "Cdn_Javascript",
@@ -88,7 +93,8 @@ const projectsData = [
         `,
 
     cdnImages,
-    true
+    true,
+    
   ),
   new Project(
     "Memester",
@@ -143,7 +149,8 @@ const projectsData = [
      React native doesn't support positive/negative lookbehinds so i had to make my own module with kotlin to handle this.`,
 
     regexImages,
-    false
+    false,
+    "regex/regexScreenRecord.mp4"
   ),
   new Project(
     "Image_Recipes",
