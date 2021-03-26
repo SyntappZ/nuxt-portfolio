@@ -15,9 +15,20 @@
             {{ tech }}
           </p>
         </div>
-        <ExansionPanel title="Show Images">
+       
+        <ExansionPanel v-if="project.video" title="Show Video">
           <div class="panel-wrap">
-            <div
+            <video v-if="project.isWebsite" width="90%" height="auto" controls class="video2">
+              <source :src="`/project-videos/${project.video}`" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <video v-else width="300" height="auto" controls class="video">
+              <source :src="`/project-videos/${project.video}`" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </ExansionPanel>
+          <div
               v-if="project.isWebsite"
               class="carousel-section"
               data-aos="fade-up"
@@ -37,20 +48,6 @@
                 :key="img"
               />
             </div>
-          </div>
-        </ExansionPanel>
-        <ExansionPanel v-if="project.video" title="Show Video">
-          <div class="panel-wrap">
-            <video v-if="project.isWebsite" width="90%" height="auto" controls class="video2">
-              <source :src="`/project-videos/${project.video}`" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <video v-else width="300" height="auto" controls class="video">
-              <source :src="`/project-videos/${project.video}`" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-        </ExansionPanel>
 
         <div class="h-50"></div>
         <h5 class="desc-title" data-aos="fade-up">Project details</h5>
