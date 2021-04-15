@@ -8,7 +8,7 @@ class Project {
     this.description = desc;
     this.images = images.map(img => `/project-images${img}`);
     this.isWebsite = type;
-    this.video = video
+    this.video = video;
   }
 }
 
@@ -21,7 +21,7 @@ const wizImages = images(12, "/wizard/wizafy");
 const aweImages = images(4, "/awesome/awesome");
 const vaultImages = images(4, "/vault/vault");
 const cdnImages = images(3, "/cdn/cdn");
-const recipeImages = images(3, "/imageRecipe/recipe");
+const recipeImages = images(4, "/imageRecipe/recipe");
 const regexImages = images(8, "/regexjs/regex");
 const memesterImages = images(6, "/memester/meme");
 const fusionImages = images(5, "/fusion/fusion");
@@ -93,8 +93,7 @@ const projectsData = [
         `,
 
     cdnImages,
-    true,
-    
+    true
   ),
   new Project(
     "Memester",
@@ -199,13 +198,14 @@ const projectsThumbnails = [
     thumbnail: "/project-thumbnails/regex.png",
     tech: tech7
   },
- 
+
   {
-    id: "Memester",
-    title: "Memester",
-    thumbnail: "/project-thumbnails/meme.png",
-    tech: tech4
+    id: "Image_Recipes",
+    title: "Image recipes",
+    thumbnail: "/project-thumbnails/image-recipes.png",
+    tech: tech8
   },
+
   {
     id: "The_Vault",
     title: "The vault",
@@ -225,12 +225,11 @@ const projectsThumbnails = [
     tech: tech3
   },
 
- 
   {
-    id: "Image_Recipes",
-    title: "Image recipes",
-    thumbnail: "/project-thumbnails/image-recipes.png",
-    tech: tech8
+    id: "Memester",
+    title: "Memester",
+    thumbnail: "/project-thumbnails/meme.png",
+    tech: tech4
   },
 
   {
