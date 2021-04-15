@@ -158,8 +158,9 @@ const projectsData = [
     tech8,
     "https://image-recipes.netlify.com",
     "https://github.com/SyntappZ/image-recipe-search",
-    `I made image recipes just as a quick project to test out the google vision api i plan to make an app using vision in the future. it was also my 
-    first time using react and i really like how it works i will defo be making more projects with react in the future.`,
+    `I made image recipes just as a quick project to test out the google vision api i plan to make an app using vision in the future. This app takes a while on the first
+    image search my guess is the server has to wake up, it was also my first time using react and i really like how it works i will defo be making more projects
+    with react in the future.`,
 
     recipeImages,
     true
