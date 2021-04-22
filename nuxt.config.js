@@ -1,4 +1,4 @@
-require('dotenv').config()
+require("dotenv").config();
 
 export default {
   mode: "universal",
@@ -22,10 +22,14 @@ export default {
         rel: "stylesheet",
         href:
           "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-      },
-     
+      }
     ]
   },
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID
+  },
+
   /*
    ** Customize the progress-bar color
    */
@@ -33,18 +37,16 @@ export default {
   /*
    ** Global CSS
    */
-  serverMiddleware: [ '~/api/index'],
-  css: ['~/assets/fonts.css'],
+  serverMiddleware: ["~/api/index"],
+  css: ["~/assets/fonts.css"],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [
-    {src: '~/plugins/vueAos.js', ssr: false}
-  ],
+  plugins: [{ src: "~/plugins/vueAos.js", ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/dotenv'],
+  buildModules: ["@nuxtjs/dotenv", "@nuxtjs/google-analytics"],
   /*
    ** Nuxt.js modules
    */
