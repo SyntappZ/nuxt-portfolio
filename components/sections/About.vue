@@ -1,5 +1,5 @@
 <template>
-  <section class="about-section" id="about">
+  <section class="about-section" id="about" ref="aboutSection">
     <div class="container">
       <div class="wrap">
         <transition>
@@ -20,7 +20,7 @@
               me start my journey as a real web developer.
             </p>
 
-            <Button title="read more" buttonWidth="150" @onClick="scrollTo('.skills-section')" />
+            <Button title="My Projects" buttonWidth="150" :handleClick="goToProjects" />
           </div>
         </transition>
 
@@ -47,7 +47,10 @@ export default {
   },
   mounted() {
      this.windowWidth = window.innerWidth
-     
+  
+    const top = this.$refs.aboutSection.offsetTop;
+    this.getSelectionPosition({ section: "aboutPosition", position: top - 10 });
+
   },
   data() {
     return {
@@ -55,7 +58,10 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["scrollTo"])
+    ...mapActions(["scrollTo", "getSelectionPosition"]),
+    goToProjects() {
+      this.scrollTo('.projects-section')
+    }
   },
   computed: {
     mobile() {

@@ -1,5 +1,5 @@
 <template>
-  <section class="skills-section">
+  <section class="skills-section" ref="skillsSection">
     <div class="container">
       <div class="wrap">
         <SectionTitle title="timeline" label="skills" />
@@ -24,7 +24,7 @@
 
 <script>
 import Year from "../Year.vue";
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 import SectionTitle from "~/components/SectionTitle.vue";
 
 export default {
@@ -32,10 +32,18 @@ export default {
     Year,
     SectionTitle
   },
+  mounted() {
+    const top = this.$refs.skillsSection.offsetTop;
+    this.getSelectionPosition({ section: "skillsPosition", position: top - 10 });
+  },
+
   data() {
     return {};
   },
- 
+  methods: {
+    ...mapActions(["getSelectionPosition"])
+  },
+
   computed: {
     ...mapState("skills", ["timelineSkills"])
   }
@@ -65,8 +73,7 @@ export default {
   height: 100%;
 }
 
-
-@media (max-width: 1024px) { 
+@media (max-width: 1024px) {
   .bar {
     display: none;
   }

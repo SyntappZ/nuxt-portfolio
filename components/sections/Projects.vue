@@ -1,5 +1,5 @@
 <template>
-  <div class="projects-section">
+  <div class="projects-section" ref="projectsSection">
     <div class="container">
       <div class="wrap">
         <SectionTitle title="my projects" label="projects" />
@@ -23,15 +23,22 @@
 import Project from "../Project.vue";
 import SectionTitle from "~/components/SectionTitle.vue";
 
-import { mapState } from "vuex";
+import { mapState, mapActions } from "vuex";
 export default {
-  mounted() {},
+  mounted() {
+    const top = this.$refs.projectsSection.offsetTop
+    this.getSelectionPosition({ section: 'projectsPosition', position: top - 10 })
+    
+  },
   components: {
     Project,
     SectionTitle
   },
   computed: {
     ...mapState("projects", ["projectsThumbnails"])
+  },
+  methods: {
+    ...mapActions(["getSelectionPosition"])
   }
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <section class="contact-section">
+  <section class="contact-section" ref="contactSection">
     <div class="container">
       <div class="wrap">
         <SectionTitle title="contact me" label="contact" />
@@ -14,10 +14,16 @@
                 <a href="https://github.com/SyntappZ" target="_">
                   <i class="fab fa-github-square"></i>
                 </a>
-                <a href="https://linkedin.com/in/martyn-dodds-00b2a319b" target="_">
+                <a
+                  href="https://linkedin.com/in/martyn-dodds-00b2a319b"
+                  target="_"
+                >
                   <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://forum.freecodecamp.org/u/biscuitmanz/summary" target="_">
+                <a
+                  href="https://forum.freecodecamp.org/u/biscuitmanz/summary"
+                  target="_"
+                >
                   <i class="fab fa-free-code-camp"></i>
                 </a>
                 <a href="https://www.codewars.com/users/SyntappZ" target="_">
@@ -31,9 +37,17 @@
             <p
               :class="[sent ? success : error, messageStyle]"
               :style="messageOpacity"
-            >{{successMessage}}</p>
+            >
+              {{ successMessage }}
+            </p>
             <form @submit="sendDetails">
-              <input class="input" type="text" placeholder="Your name" v-model="name" required />
+              <input
+                class="input"
+                type="text"
+                placeholder="Your name"
+                v-model="name"
+                required
+              />
               <input
                 :style="invalidMail"
                 class="input"
@@ -42,7 +56,12 @@
                 v-model="email"
                 required
               />
-              <input class="input" type="text" placeholder="Phone number" v-model="phone" />
+              <input
+                class="input"
+                type="text"
+                placeholder="Phone number"
+                v-model="phone"
+              />
               <textarea
                 placeholder="your message"
                 class="text-area"
@@ -66,10 +85,15 @@
 <script>
 import SectionTitle from "~/components/SectionTitle.vue";
 import Footer from "~/components/Footer.vue";
+import { mapActions } from "vuex";
 export default {
   components: {
     Footer,
     SectionTitle
+  },
+  mounted() {
+    const top = this.$refs.contactSection.offsetTop;
+    this.getSelectionPosition({ section: "contactPosition", position: top - 200 });
   },
   data() {
     return {
@@ -97,6 +121,8 @@ export default {
     }
   },
   methods: {
+    ...mapActions(["getSelectionPosition"]),
+
     validateEmail(email) {
       return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
     },

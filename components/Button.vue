@@ -1,17 +1,13 @@
 <template>
-  <div :style="{width:buttonWidth + 'px'}" class="btn" @click="onClick">{{title}}</div>
+  <div :style="{width:buttonWidth + 'px'}" class="btn" @click="handleClick">{{title}}</div>
 </template>
 
 <script>
 export default {
-  props: ["title", "handleClick", "buttonWidth"],
+  props: ["title", "buttonWidth", "handleClick"],
   mounted() {},
   created() {},
-  methods: {
-    onClick() {
-      this.$emit("onClick");
-    }
-  }
+ 
 };
 </script>
 
